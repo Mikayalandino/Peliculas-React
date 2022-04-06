@@ -1,4 +1,5 @@
-import './App.css';
+import './App.scss';
+import "./Styles/Reset.scss";
 import Nav from './Components/Nav';
 
 const App = () => {
