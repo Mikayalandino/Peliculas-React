@@ -1,18 +1,20 @@
 import '../Styles/Nav.scss';
 import { FiHome as HomeIcon } from "react-icons/fi";
-import { FiVideo as VideoIcon } from "react-icons/fi";
-import { FiTv as TvIcon } from "react-icons/fi";
+import { FiVideo as MovieIcon } from "react-icons/fi";
+import { FiTv as SerieIcon } from "react-icons/fi";
 import { FiSearch as SearchIcon } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
         <nav>
-            <ul>
-                <li><HomeIcon/></li>
-                <li><VideoIcon/></li>
-                <li><TvIcon/></li>
-                <li><input type="text"><SearchIcon/></input></li>
-            </ul>
+            <Link className='nav-link' to="/"><HomeIcon /></Link>
+            <Link className='nav-link' to="/movie"><MovieIcon /></Link>
+            <Link className='nav-link' to="/tv"><SerieIcon /></Link>
+            <form className='nav-link'>
+                <button><SearchIcon/></button>
+                <input type="text" />
+            </form>
         </nav>
     )
 };
