@@ -21,10 +21,10 @@ const App = () => {
         <Route path='/movie' element={<Movies />}></Route>
         <Route path='/tv' element={<Series />}></Route>
         <Route path='/search' element= {<Search />}></Route>
-        <Route path="/movie/:id/:info" element={<DetalleMovie />} />
-        <Route path="/tv/:id/:info" element={<DetalleSerie />} />
-        <Route path="/movies/:category/page/:pagina" element={<CategoriaMovies />} />                  
-        <Route path="/tv/:category/page/:pagina" element={<CategoriaSeries/>} />
+        <Route path="/movie/:id/:data" element={<DetalleMovie />} />
+        <Route path="/tv/:id/:data" element={<DetalleSerie />} />
+        <Route path="/movie/:category/page/:page" element={<CategoriaMovies />} />                  
+        <Route path="/tv/:category/page/:page" element={<CategoriaSeries/>} />
         <Route path='/*' element= {<Error404 />}></Route>
       </Routes>
     </BrowserRouter>
