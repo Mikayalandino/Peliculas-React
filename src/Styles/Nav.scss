@@ -1,12 +1,11 @@
 nav {
+    display: flex;
     color: #FFF;
     background-color: #23272A;
-    ul {
-        display: flex;
-    }
-    li {
+    .nav-link {
         font-size: 30px;
         list-style: none;
         padding: 10px;
     }
+    
 }

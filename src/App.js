@@ -8,6 +8,9 @@ import Home from './Components/Home';
 import Movies from './Components/Movies';
 import Series from './Components/Series';
 import Search from './Components/Search';
+import DetalleMovie from './Components/DetalleMovie';
+import DetalleSerie from './Components/DetalleSerie';
+
 import Error404 from './Components/Error404';
 
 const App = () => {
@@ -16,14 +19,14 @@ const App = () => {
       <Nav/>
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='/movies' element={<Movies />}></Route>
-        <Route path='/series' element={<Series />}></Route>
+        <Route path='/movie' element={<Movies />}></Route>
+        <Route path='/tv' element={<Series />}></Route>
         <Route path='/search' element= {<Search />}></Route>
+        <Route path="/movie/:id/:info" element={<DetalleMovie />} />
+        <Route path="/tv/:id/:info" element={<DetalleSerie />} />
         <Route path='/*' element= {<Error404 />}></Route>
       </Routes>
-      
     </BrowserRouter>
-    
   )
 };
 
