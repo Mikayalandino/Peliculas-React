@@ -10,6 +10,8 @@ import Series from './Components/Series';
 import Search from './Components/Search';
 import DetalleMovie from './Components/DetalleMovie';
 import DetalleSerie from './Components/DetalleSerie';
+import CategoriaMovies from './Components/CategoriaMovies';
+import CategoriaSeries from './Components/CategoriaSeries';
 import Error404 from './Components/Error404';
 
 const App = () => {
