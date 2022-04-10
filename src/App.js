@@ -10,7 +10,6 @@ import Series from './Components/Series';
 import Search from './Components/Search';
 import DetalleMovie from './Components/DetalleMovie';
 import DetalleSerie from './Components/DetalleSerie';
-
 import Error404 from './Components/Error404';
 
 const App = () => {
@@ -24,6 +23,8 @@ const App = () => {
         <Route path='/search' element= {<Search />}></Route>
         <Route path="/movie/:id/:info" element={<DetalleMovie />} />
         <Route path="/tv/:id/:info" element={<DetalleSerie />} />
+        <Route path="/movies/:category/page/:pagina" element={<CategoriaMovies />} />                  
+        <Route path="/tv/:category/page/:pagina" element={<CategoriaSeries/>} />
         <Route path='/*' element= {<Error404 />}></Route>
       </Routes>
     </BrowserRouter>
