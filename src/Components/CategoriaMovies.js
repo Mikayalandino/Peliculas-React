@@ -1,6 +1,6 @@
 const CategoriaMovies = () => {
     return (
-        <h1>Categoria Movies</h1>
+        <h1>Categoria Peliculas</h1>
     )
 } 
 
