@@ -1,0 +1,16 @@
+section {
+    height: 840px;
+    background-color: #36393F;
+    padding: 50px 30px;
+    .home-peliculas-tendencia-title {
+        color: #fff;
+        display: flex;
+        text-decoration: none;
+     
+        .FiArrowRight {
+            color: #2196F3;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+    }
+}
