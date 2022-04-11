@@ -9,19 +9,19 @@ const Footer = () => {
             <div>
                 <ul>
                     <li>
-                        <a href="https://github.com/Mikayalandino"  target="_blank">
+                        <a href="https://github.com/Mikayalandino">
                             <AiFillGithub />
                         </a>
                         
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/Mikayalandino/"  target="_blank">
+                        <a href="https://www.linkedin.com/in/Mikayalandino/">
                         <AiFillLinkedin />
                         </a>
                     </li>
 
                     <li>
-                        <a href="mailto:Micaelayalandino@gmail.com"  target="_blank">
+                        <a href="mailto:Micaelayalandino@gmail.com">
                             <AiOutlineMail />
                         </a>
                     </li>
