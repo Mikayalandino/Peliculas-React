@@ -13,6 +13,7 @@ import DetalleSerie from './Components/DetalleSerie';
 import CategoriaMovies from './Components/CategoriaMovies';
 import CategoriaSeries from './Components/CategoriaSeries';
 import Error404 from './Components/Error404';
+import Footer from './Components/Footer';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/tv/:category/page/:page" element={<CategoriaSeries/>} />
         <Route path='/*' element= {<Error404 />}></Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 };
