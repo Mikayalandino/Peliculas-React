@@ -12,8 +12,8 @@ const Nav = () => {
             <Link className='nav-link' to="/movie"><MovieIcon /></Link>
             <Link className='nav-link' to="/tv"><SerieIcon /></Link>
             <form className='nav-link'>
-                <button><SearchIcon/></button>
-                <input type="text" />
+                <input type="text" placeholder='Busqueda...'/>
+                <button className='serie-icon'><SearchIcon/></button>
             </form>
         </nav>
     )
