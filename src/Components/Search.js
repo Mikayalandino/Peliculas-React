@@ -1,10 +1,10 @@
 import '../Styles/Search.scss'
 
-import { useParams } from "react-router-dom";
+/* import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+ */
 const Search = () => {
-
+/* 
     const params = useParams()
     const [searchResultados, setSearchResultados] = useState([])
 
@@ -14,18 +14,18 @@ const Search = () => {
         .then(data => {
             setSearchResultados(data.results)
         }))
-    }, [])
+    }, []) */
 
     return (
         <div className="search">
             <h1>Resultados para: </h1>
-            {searchResultados.map(resultado => (
+            {/* {searchResultados.map(resultado => (
                 <div>
-                    {/* <img src={resultado.poster_path} alt={resultado.poster_path}></img> */}
+                    <img src={resultado.poster_path} alt={resultado.poster_path}></img>
                     <h2 key={resultado.id}>{resultado.name}</h2>
                 </div>
             ))
-            }
+            } */}
 
         </div>
     )
