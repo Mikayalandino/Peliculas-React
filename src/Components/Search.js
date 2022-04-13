@@ -1,5 +1,7 @@
 import '../Styles/Search.scss'
 
+/* import { urlApi, apiKey } from '../Variables Auxiliares/auxiliares'; */
+
 /* import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
  */
@@ -9,7 +11,7 @@ const Search = () => {
     const [searchResultados, setSearchResultados] = useState([])
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/search/multi?api_key=e25295b648c3ef3c3b8c8c319786e4fb&query=${params.title}`)
+        fetch(`{urlApi}/3/search/multi?api_key={apiKey}&query=${params.title}`)
         .then(res => res.json()
         .then(data => {
             setSearchResultados(data.results)
