@@ -1,21 +1,27 @@
 import '../Styles/Home.scss'
-import {FiArrowRight} from "react-icons/fi";
+
 import { Link } from 'react-router-dom';
 
+import PeliculasTendencia from "../Components/PeliculasTendencia"
+import SeriesTendencia from './SeriesTendencia';
+
 const Home = () => {
+
     return (
         <section>
             <h1>Home</h1>
             <div>
-                <Link className='home-peliculas-tendencia-title' to='/movie/:category/page/:page'>
-                    <h2>Películas que son tendencia</h2>
-                    <FiArrowRight className='FiArrowRight' />
+                <Link className='home-tendencia-title' to='/movie/:category/page/:page'>
+                    <PeliculasTendencia 
+                        titles="Películas que son tendencia"
+                        type="movie"/>
                 </Link>
             </div>
             <div>
-                <Link className='home-peliculas-tendencia-title' to='/tv/:category/page/:page'>
-                    <h2>Series que son tendencia</h2>
-                    <FiArrowRight className='FiArrowRight' />
+                <Link className='home-tendencia-title' to='/tv/:category/page/:page'>
+                    <SeriesTendencia 
+                        titles="Series que son tendencia"
+                        type="tv"/>
                 </Link>
             </div>
         </section>
