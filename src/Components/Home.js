@@ -1,31 +1,23 @@
-import '../Styles/Home.scss'
-
-import { Link } from 'react-router-dom';
-
-import PeliculasTendencia from "../Components/PeliculasTendencia"
-import SeriesTendencia from './SeriesTendencia';
+import "../Styles/Home.scss";
+import HomeTendencias from "./HomeTendencias";
 
 const Home = () => {
-
-    return (
-        <section>
-            <h1>Home</h1>
-            <div>
-                <Link className='home-tendencia-title' to='/movie/:category/page/:page'>
-                    <PeliculasTendencia 
-                        titles="Películas que son tendencia"
-                        type="movie"/>
-                </Link>
-            </div>
-            <div>
-                <Link className='home-tendencia-title' to='/tv/:category/page/:page'>
-                    <SeriesTendencia 
-                        titles="Series que son tendencia"
-                        type="tv"/>
-                </Link>
-            </div>
-        </section>
-    )
-} 
+  return (
+    <section>
+      <div>
+        <HomeTendencias 
+            title="Películas que son tendencia" 
+            type="movie"
+         />
+      </div>
+      <div>
+        <HomeTendencias 
+            title="Series que son tendencia"
+            type="tv" 
+        />
+      </div>
+    </section>
+  );
+};
 
 export default Home;

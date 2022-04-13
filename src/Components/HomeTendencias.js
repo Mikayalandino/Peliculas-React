@@ -1,4 +1,5 @@
-import "../Components/PeliculasTendencia"
+import "../Styles/HomeTendencias.scss"
+import { Link } from 'react-router-dom';
 
 import { useEffect, useState } from "react";
 import {
@@ -10,16 +11,16 @@ import {
 
 import { FiArrowRight } from "react-icons/fi";
 
-const PeliculasTendencia = ({ titles, type }) => {
+const HomeTendencias = ({ title, type }) => {
 
-    const [peliculasTendencia, setPeliculasTendencia] = useState([])
+    const [listaTendencias, setListaTendencias] = useState([])
     
     useEffect(() => {
         fetch(
         `${urlApi}/trending/${type}/week?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
         res.json().then((data) => {
-            setPeliculasTendencia(data.results);
+            setListaTendencias(data.results);
         })
         );
     }, []);
@@ -27,14 +28,16 @@ const PeliculasTendencia = ({ titles, type }) => {
     return (
         <div className="peliculas-tendencia">
             <div>
-                <h2>{titles}</h2>
+                <h2>{title}</h2>
                 <FiArrowRight className="FiArrowRight" />
             </div>
-            {peliculasTendencia.map (peliculas => 
-            <p key={peliculas.id}>{peliculas.title}</p>)
-            }
+            <Link className='home-tendencia-title' to='/movie/:category/page/:page'>
+                {listaTendencias.map (lista => 
+                <p key={lista.id}>{lista.title}</p>)
+                }
+            </Link>
         </div>
     );
 };
 
-export default PeliculasTendencia;
+export default HomeTendencias;
