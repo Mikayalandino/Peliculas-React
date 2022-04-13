@@ -1,6 +1,5 @@
 import "../Styles/Home.scss";
 import HomeTendencias from "./HomeTendencias";
-import CardsTendencias from "./CardsTendencias.js"
 
 const Home = () => {
   return (

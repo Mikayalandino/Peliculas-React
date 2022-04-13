@@ -1,3 +1,4 @@
+import "../Styles/CardsTendencias.scss"
 import { Link } from "react-router-dom";
 
 const CardsTendencias = ({titulo, img, link}) => {

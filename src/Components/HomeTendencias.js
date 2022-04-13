@@ -1,11 +1,6 @@
 import "../Styles/HomeTendencias.scss"
 import { useEffect, useState } from "react";
-import {
-  urlApi,
-  apiKey,
-  lenguageEs,
-  urlImg300,
-} from "../Variables Auxiliares/auxiliares";
+import { urlApi, apiKey, lenguageEs, urlImg300} from "../Variables Auxiliares/auxiliares";
 
 import { FiArrowRight } from "react-icons/fi";
 import CardsTendencias from "./CardsTendencias";
@@ -25,19 +20,23 @@ const HomeTendencias = ({ title, type }) => {
     }, []);
 
     return (
-        <div className="peliculas-tendencia">
-            <div>
-                <h2>{title}</h2>
+        <div>
+            <div className="peliculas-tendencia">
+                <h2 className="title">{title}</h2>
                 <FiArrowRight className="FiArrowRight" />
             </div>
+            <div className="cards-tendencias">
                 {listaTendencias.map (lista => 
-                <CardsTendencias 
+                    <CardsTendencias 
                     titulo={lista.title}
-                    img={`https://image.tmdb.org/t/p/w200/${lista.poster_path}`}
+                    img={`https://image.tmdb.org/t/p/w300/${lista.poster_path}`}
                     link={`/${lista.id}`}
-                />)
+                    key={lista.id}
+                    />)
                 }
+            </div>
         </div>
+      
     );
 };
 
