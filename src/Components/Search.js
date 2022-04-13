@@ -1,10 +1,10 @@
 import '../Styles/Search.scss'
 
-import { useParams } from "react-router-dom";
+/* import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+ */
 const Search = () => {
-
+/* 
     const params = useParams()
     const [searchResultados, setSearchResultados] = useState([])
 
@@ -14,7 +14,7 @@ const Search = () => {
         .then(data => {
             setSearchResultados(data.results)
         }))
-    }, [])
+    }, []) */
 
     return (
         <div className="search">
