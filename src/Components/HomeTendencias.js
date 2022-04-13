@@ -1,6 +1,6 @@
 import "../Styles/HomeTendencias.scss"
 import { useEffect, useState } from "react";
-import { urlApi, apiKey, lenguageEs, urlImg300} from "../Variables Auxiliares/auxiliares";
+import { urlApi, apiKey, lenguageEs} from "../Variables Auxiliares/auxiliares";
 
 import { FiArrowRight } from "react-icons/fi";
 import CardsTendencias from "./CardsTendencias";
