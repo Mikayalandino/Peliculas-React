@@ -1,6 +1,4 @@
 import "../Styles/HomeTendencias.scss"
-import { Link } from 'react-router-dom';
-
 import { useEffect, useState } from "react";
 import {
   urlApi,
@@ -10,6 +8,7 @@ import {
 } from "../Variables Auxiliares/auxiliares";
 
 import { FiArrowRight } from "react-icons/fi";
+import CardsTendencias from "./CardsTendencias";
 
 const HomeTendencias = ({ title, type }) => {
 
@@ -31,11 +30,13 @@ const HomeTendencias = ({ title, type }) => {
                 <h2>{title}</h2>
                 <FiArrowRight className="FiArrowRight" />
             </div>
-            <Link className='home-tendencia-title' to='/movie/:category/page/:page'>
                 {listaTendencias.map (lista => 
-                <p key={lista.id}>{lista.title}</p>)
+                <CardsTendencias 
+                    titulo={lista.title}
+                    img={`https://image.tmdb.org/t/p/w200/${lista.poster_path}`}
+                    link={`/${lista.id}`}
+                />)
                 }
-            </Link>
         </div>
     );
 };
