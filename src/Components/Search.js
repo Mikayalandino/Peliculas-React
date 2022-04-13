@@ -19,13 +19,13 @@ const Search = () => {
     return (
         <div className="search">
             <h1>Resultados para: </h1>
-            {searchResultados.map(resultado => (
+            {/* {searchResultados.map(resultado => (
                 <div>
                     <img src={resultado.poster_path} alt={resultado.poster_path}></img>
                     <h2 key={resultado.id}>{resultado.name}</h2>
                 </div>
             ))
-            }
+            } */}
 
         </div>
     )
