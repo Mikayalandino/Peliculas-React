@@ -7,13 +7,13 @@ const Home = () => {
       <div>
         <HomeTendencias 
             title="Películas que son tendencia" 
-            type="movie"
+            types="movie"
          />
       </div>
       <div>
         <HomeTendencias 
             title="Series que son tendencia"
-            type="tv" 
+            types="tv" 
         />
       </div>
     </section>

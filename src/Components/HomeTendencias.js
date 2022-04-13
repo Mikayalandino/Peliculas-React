@@ -3,15 +3,16 @@ import { useEffect, useState } from "react";
 import { urlApi, apiKey, lenguageEs} from "../Variables Auxiliares/auxiliares";
 
 import { FiArrowRight } from "react-icons/fi";
+
 import CardsTendencias from "./CardsTendencias";
 
-const HomeTendencias = ({ title, type }) => {
+const HomeTendencias = ({ title, types }) => {
 
     const [listaTendencias, setListaTendencias] = useState([])
     
     useEffect(() => {
         fetch(
-        `${urlApi}/trending/${type}/week?${apiKey}&${lenguageEs}&page=1`
+        `${urlApi}/trending/${types}/week?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
         res.json().then((data) => {
             setListaTendencias(data.results);
