@@ -1,6 +1,6 @@
 import '../Styles/Search.scss'
 
-/* import { urlApi, apiKey } from '../Variables Auxiliares/auxiliares'; */
+/* import { urlApi, apiKey, urlImg300 } from '../Variables Auxiliares/auxiliares'; */
 
 /* import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -11,7 +11,7 @@ const Search = () => {
     const [searchResultados, setSearchResultados] = useState([])
 
     useEffect(() => {
-        fetch(`{urlApi}/3/search/multi?api_key={apiKey}&query=${params.title}`)
+        fetch(`${urlApi}/3/search/multi?${apiKey}&query=${params.title}&${lenguajeEs}`)
         .then(res => res.json()
         .then(data => {
             setSearchResultados(data.results)

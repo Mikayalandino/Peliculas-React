@@ -1,0 +1,20 @@
+.peliculas-tendencia {
+    display: flex;
+    align-items: center;
+
+    .title {
+        color: gainsboro;
+        padding-left: 10px;
+    }
+
+    .FiArrowRight {
+        color: #2196F3;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+}
+
+.cards-tendencias {
+    display: flex;
+    padding: 10px;
+}

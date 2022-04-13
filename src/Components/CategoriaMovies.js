@@ -1,6 +1,11 @@
-const CategoriaMovies = () => {
+import { FiArrowRight } from "react-icons/fi";
+
+const CategoriaMovies = ({title}) => {
     return (
-        <h1>Categoria Peliculas</h1>
+        <div className="categorias-movies">
+            <h2 className="title">{title}</h2>
+            <FiArrowRight className="FiArrowRight" />
+        </div>
     )
 } 
 
