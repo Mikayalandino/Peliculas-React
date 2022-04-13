@@ -29,10 +29,10 @@ const HomeTendencias = ({ title, types }) => {
             <div className="cards-tendencias">
                 {listaTendencias.map (lista => 
                     <CardsTendencias 
-                    titulo={lista.title}
-                    img={`https://image.tmdb.org/t/p/w300/${lista.poster_path}`}
-                    link={`/${lista.id}`}
-                    key={lista.id}
+                        titulo={lista.title}
+                        img={`https://image.tmdb.org/t/p/w300/${lista.poster_path}`}
+                        link={`/${lista.id}`}
+                        key={lista.id}
                     />)
                 }
             </div>
