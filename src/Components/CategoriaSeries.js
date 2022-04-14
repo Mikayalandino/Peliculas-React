@@ -2,7 +2,7 @@ import "../Styles/Movies.scss"
 
 import { FiArrowRight } from "react-icons/fi";
 
-import CardsTendencias from "./CardsTendencias";
+import CategoriaCardsSeries from "./CategoriaCardsSeries";
 
 const CategoriaSeries = ({title, series}) => {
     return (
@@ -13,8 +13,8 @@ const CategoriaSeries = ({title, series}) => {
             </div>
             <div className="categorias-lista-movie">
                 {series.map(serie => 
-                    <CardsTendencias 
-                        titulo={serie.title}
+                    <CategoriaCardsSeries 
+                        titulo={serie.name}
                         img={`https://image.tmdb.org/t/p/w300/${serie.poster_path}`}
                         link={`/${serie.id}`}
                         key={serie.id}

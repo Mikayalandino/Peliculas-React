@@ -29,7 +29,8 @@ const HomeTendencias = ({ title, types }) => {
             <div className="cards-tendencias">
                 {listaTendencias.map (lista => 
                     <CardsTendencias 
-                        titulo={lista.title}
+                        tituloPeliculas={lista.title}
+                        tituloSeries={lista.name}
                         img={`https://image.tmdb.org/t/p/w300/${lista.poster_path}`}
                         link={`/${lista.id}`}
                         key={lista.id}
