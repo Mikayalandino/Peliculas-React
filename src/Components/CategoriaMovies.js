@@ -1,6 +1,7 @@
 import "../Styles/Movies.scss"
 
 import { FiArrowRight } from "react-icons/fi";
+import CardsTendencias from "./CardsTendencias";
 
 const CategoriaMovies = ({title, movies}) => {
     return (
@@ -10,7 +11,14 @@ const CategoriaMovies = ({title, movies}) => {
                 <FiArrowRight className="FiArrowRight" />
             </div>
             <div className="categorias-lista-movie">
-                {movies.map(movie => <h3 key={movie.id}>{movie.title}</h3>)}
+                {movies.map(movie => 
+                    <CardsTendencias 
+                    titulo={movie.title}
+                    img={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                    link={`/${movie.id}`}
+                    key={movie.id}
+                    />
+                )}
             </div>
         </div>
     )

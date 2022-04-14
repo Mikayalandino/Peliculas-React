@@ -39,7 +39,7 @@ const Series = () => {
     }, []);
 
     return (
-        <div>
+        <div className="movies">
             <CategoriaSeries 
                 title="Series popularess"
                 series={listaSeriesPopulares}
