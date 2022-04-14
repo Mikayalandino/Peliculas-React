@@ -1,6 +1,11 @@
+import "../Styles/Error404.scss"
+
 const Error404 = () => {
     return (
-        <h1>Error404</h1>
+        <div className="error-404">
+            <img src="../Images/Error404Movie.jpg" alt="Error 404"/>
+        </div>
+        
     )
 } 
 
