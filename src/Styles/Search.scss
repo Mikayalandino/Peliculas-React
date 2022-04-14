@@ -9,6 +9,11 @@ h1 {
     background-color: #36393F;
     padding: 50px 30px;
 
+    .search-cards {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     h2 {
         color: #fff;
         font-weight: 300;
