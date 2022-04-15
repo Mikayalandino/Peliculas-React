@@ -14,8 +14,9 @@ const HomeTendencias = ({ title, types }) => {
         fetch(
         `${urlApi}/trending/${types}/week?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
-        res.json().then((data) => {
-            setListaTendencias(data.results);
+        res.json().then((data) => {        
+            const info = data.results
+            setListaTendencias(info.splice(0,5));
         })
         );
     }, []);

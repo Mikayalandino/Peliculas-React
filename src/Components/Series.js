@@ -13,7 +13,8 @@ const Series = () => {
         `${urlApi}/tv/popular?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
         res.json().then((data) => {
-            setListaSeriesPopulares(data.results);
+            const info = data.results
+            setListaSeriesPopulares(info.splice(0,5));
         })
         );
     }, []);
@@ -23,7 +24,8 @@ const Series = () => {
         `${urlApi}/tv/top_rated?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
         res.json().then((data) => {
-            setListaSeriesMejoresCriticas(data.results);
+            const info = data.results
+            setListaSeriesMejoresCriticas(info.splice(0,5));
         })
         );
     }, []);
@@ -33,7 +35,8 @@ const Series = () => {
         `${urlApi}/tv/on_the_air?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
         res.json().then((data) => {
-            setListaSeriesAlAire(data.results);
+            const info = data.results
+            setListaSeriesAlAire(info.splice(0,5));
         })
         );
     }, []);

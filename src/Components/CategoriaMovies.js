@@ -1,4 +1,4 @@
-import "../Styles/Movies.scss"
+import "../Styles/Home.scss"
 
 import { FiArrowRight } from "react-icons/fi";
 
