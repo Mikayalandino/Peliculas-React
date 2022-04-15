@@ -4,7 +4,7 @@ import "./Styles/Reset.scss";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Nav from './Components/Nav';
-import Carousel from './Components/Carousel';
+/* import Carousel from './Components/Carousel'; */
 import Home from './Components/Home';
 import Movies from './Components/Movies';
 import Series from './Components/Series';

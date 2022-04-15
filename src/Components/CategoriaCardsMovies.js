@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const CategoriaCardsMovies = ({titulo, img, link}) => {
     return (
         <div className="cards-tendencias">
-            <Link to={link}>
+            <Link className="cards-link" to={link}>
                 <img src={img} alt={titulo}/>
                 <h2>{titulo}</h2>
             </Link>

@@ -1,21 +1,30 @@
-h1 {
-    color: #fff;
-    font-weight: 300;
-    margin-bottom: 20px;
-}
-
 .search {
-    height: 840px;
-    background-color: #36393F;
-    padding: 50px 30px;
+    display: flex;
+    justify-content: center;
+    background-color: #36393f;
+    
+    .title {
+        color: gainsboro;
+        font-size: 35px;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
 
     .search-cards {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        div {
+            padding: 10px;
+        }
     }
 
-    h2 {
+    h3 {
         color: #fff;
-        font-weight: 300;
+        text-align: center;
+        font-weight: 200;
+        margin-bottom: 20px;
     }
 }
