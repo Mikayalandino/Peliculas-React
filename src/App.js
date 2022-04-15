@@ -4,6 +4,7 @@ import "./Styles/Reset.scss";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Nav from './Components/Nav';
+import Carousel from './Components/Carousel';
 import Home from './Components/Home';
 import Movies from './Components/Movies';
 import Series from './Components/Series';
@@ -18,7 +19,8 @@ import Footer from './Components/Footer';
 const App = () => {
   return (
     <BrowserRouter>
-      <Nav/>
+      <Nav />
+      {/* <Carousel /> */}
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/search/:title' element={<Search />}></Route>
