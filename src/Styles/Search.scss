@@ -1,4 +1,4 @@
-.search {
+section {
     display: flex;
     justify-content: center;
     background-color: #36393f;
@@ -26,5 +26,11 @@
         text-align: center;
         font-weight: 200;
         margin-bottom: 20px;
+    }
+
+    .paginado {
+        button {
+            color: #fff;
+        }
     }
 }
