@@ -1,5 +1,4 @@
 import '../Styles/Search.scss'
-
 import { urlApi, apiKey, lenguageEs } from '../Variables Auxiliares/auxiliares';
 
 import { useParams } from "react-router-dom";

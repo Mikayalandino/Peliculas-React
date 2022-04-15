@@ -1,6 +1,10 @@
 section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #36393F;
-    padding: 50px 30px;
+    padding: 50px;
     
     .home-tendencia-title {
         color: #fff;

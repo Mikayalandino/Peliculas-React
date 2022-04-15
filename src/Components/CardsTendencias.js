@@ -1,10 +1,9 @@
-import "../Styles/CardsTendencias.scss"
 import { Link } from "react-router-dom";
 
 const CardsTendencias = ({tituloPeliculas, tituloSeries, img, link}) => {
   return (
-    <div className="cards-tendencia">
-      <Link to={link}>
+    <div className="cards-tendencias">
+      <Link className="cards-link" to={link}>
         <img src={img} alt={tituloPeliculas}/>
         <h2>{tituloPeliculas}</h2>
         <h2>{tituloSeries}</h2>

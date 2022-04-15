@@ -1,17 +1,17 @@
-import "../Styles/Movies.scss"
-
-import { FiArrowRight } from "react-icons/fi";
-
+import "../Styles/Home.scss"
 import CategoriaCardsMovies from "./CategoriaCardsMovies";
 
-const CategoriaMovies = ({title, movies}) => {
+import { Link } from 'react-router-dom';
+import { FiArrowRight } from "react-icons/fi";
+
+const CategoriaMovies = ({title, movies, linkRuta}) => {
     return (
-        <div className="categorias-movies">
-            <div className="titulo-categorias-movies">
+        <div>
+            <Link className="peliculas-tendencia" to={`/movie/${linkRuta}`}>
                 <h2 className="title">{title}</h2>
                 <FiArrowRight className="FiArrowRight" />
-            </div>
-            <div className="categorias-lista-movie">
+            </Link>
+            <div className="cards-tendencias">
                 {movies.map(movie => 
                    <CategoriaCardsMovies 
                         titulo={movie.title}
