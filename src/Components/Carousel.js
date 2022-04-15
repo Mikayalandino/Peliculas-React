@@ -25,7 +25,10 @@ const Carousel = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        { /* !!SwiperSlide && */ data.map( (curr) => {
+        {/* Error deploy:
+        Line 28:51:  Array.prototype.map() expects a return value from arrow function  array-callback-return
+        
+        { !!SwiperSlide && data.map( (curr) => {
           <SwiperSlide>
             <img 
               src={`https://image.tmdb.org/t/p/original/${curr.backdrop_path}`} 
@@ -35,7 +38,7 @@ const Carousel = () => {
           }
           )
         }
-
+ */}
       </Swiper>
     </>
   );
