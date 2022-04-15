@@ -1,4 +1,4 @@
-import "../Styles/Carousel.scss";
+/* import "../Styles/Carousel.scss";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
@@ -25,9 +25,6 @@ const Carousel = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        {/* Error deploy:
-        Line 28:51:  Array.prototype.map() expects a return value from arrow function  array-callback-return
-        
         { !!SwiperSlide && data.map( (curr) => {
           <SwiperSlide>
             <img 
@@ -38,10 +35,13 @@ const Carousel = () => {
           }
           )
         }
- */}
+
       </Swiper>
     </>
   );
 }
 
-export default Carousel;
+Error deploy:
+  Line 28:51:  Array.prototype.map() expects a return value from arrow function  array-callback-return
+
+export default Carousel; */
