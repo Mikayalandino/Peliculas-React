@@ -1,8 +1,7 @@
-import "../Styles/Home.scss"
-
 import CategoriaMovies from "./CategoriaMovies";
-import { useEffect, useState } from "react";
 import { urlApi, apiKey, lenguageEs} from "../Variables Auxiliares/auxiliares";
+
+import { useEffect, useState } from "react";
 
 const Movies = () => {
 
@@ -55,33 +54,30 @@ const Movies = () => {
         );
     }, []);
 
-   /*  const recortarLista = (array) => {
-        return array.splice(0.5)
-    }
-    
- */
-
-
     return (
-        <div className="movies">
+        <section>
             <CategoriaMovies 
                 title="Películas populares"
                 movies={listaPeliculasPopulares}
+                linkRuta="popular"
             />
             <CategoriaMovies 
                 title="Películas con mejores críticas"
                 movies={listaPeliculasMejoresCriticas}
+                linkRuta="top_rated"
             />
             <CategoriaMovies 
                 title="Películas a estrenarse"
                 movies={listaPeliculasAEstrenar}
+                linkRuta="upcoming"
             />
             <CategoriaMovies 
                 title="Películas en cines"
                 movies={listaPeliculasEnCine}
+                linkRuta="now_playing"
             />
 
-        </div>
+        </section>
     )
 } 
 

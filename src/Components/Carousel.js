@@ -1,9 +1,9 @@
 /* import "../Styles/Carousel.scss";
+import useFetch from "../Hooks/useFetch";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 
-import useFetch from "../Hooks/useFetch";
 
 const Carousel = () => {
 

@@ -1,12 +1,14 @@
 import "../Styles/HomeTendencias.scss"
-import { useEffect, useState } from "react";
+import CardsTendencias from "./CardsTendencias";
 import { urlApi, apiKey, lenguageEs} from "../Variables Auxiliares/auxiliares";
+
+import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 
 import { FiArrowRight } from "react-icons/fi";
 
-import CardsTendencias from "./CardsTendencias";
 
-const HomeTendencias = ({ title, types }) => {
+const HomeTendencias = ({ title, types, linkRuta }) => {
 
     const [listaTendencias, setListaTendencias] = useState([])
     
@@ -23,10 +25,10 @@ const HomeTendencias = ({ title, types }) => {
 
     return (
         <div>
-            <div className="peliculas-tendencia">
+            <Link className="peliculas-tendencia" to={`/${types}/${linkRuta}`}>
                 <h2 className="title">{title}</h2>
                 <FiArrowRight className="FiArrowRight" />
-            </div>
+            </Link>
             <div className="cards-tendencias">
                 {listaTendencias.map (lista => 
                     <CardsTendencias 

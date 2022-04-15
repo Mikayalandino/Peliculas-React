@@ -1,4 +1,5 @@
 import '../Styles/Footer.scss'
+
 import {AiFillGithub} from "react-icons/ai";
 import {AiFillLinkedin} from "react-icons/ai";
 import {AiOutlineMail} from "react-icons/ai";
@@ -6,7 +7,6 @@ import {AiOutlineMail} from "react-icons/ai";
 const Footer = () => {
     return (
         <footer>
-            <div>
                 <ul>
                     <li>
                         <a href="https://github.com/Mikayalandino">
@@ -26,7 +26,6 @@ const Footer = () => {
                         </a>
                     </li>
                 </ul>
-            </div>
             <p>Hecho con 🐱‍💻 por <a href="https://github.com/Mikayalandino">Mika</a></p>
         </footer>
     )

@@ -1,11 +1,14 @@
 import '../Styles/Nav.scss';
 import { FiHome as HomeIcon } from "react-icons/fi";
+
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+
 import { FiVideo as MovieIcon } from "react-icons/fi";
 import { FiTv as SerieIcon } from "react-icons/fi";
 import { FiSearch as SearchIcon } from "react-icons/fi";
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 
 const Nav = () => {
 

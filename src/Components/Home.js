@@ -8,12 +8,14 @@ const Home = () => {
         <HomeTendencias 
           title="Películas que son tendencia" 
           types="movie"
+          linkRuta="trending"
          />
       </div>
       <div>
         <HomeTendencias 
           title="Series que son tendencia"
           types="tv" 
+          linkRuta="trending"
         />
       </div>
     </section>

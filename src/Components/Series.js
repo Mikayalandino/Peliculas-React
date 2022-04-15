@@ -1,6 +1,7 @@
 import CategoriaSeries from "./CategoriaSeries";
-import { useEffect, useState } from "react";
 import { urlApi, apiKey, lenguageEs} from "../Variables Auxiliares/auxiliares";
+
+import { useEffect, useState } from "react";
 
 const Series = () => {
 
@@ -42,20 +43,23 @@ const Series = () => {
     }, []);
 
     return (
-        <div className="movies">
+        <section>
             <CategoriaSeries 
-                title="Series popularess"
+                title="Series populares"
                 series={listaSeriesPopulares}
+                linkRuta="popular"
             />
             <CategoriaSeries 
                 title="Series con mejores críticas"
                 series={listaSeriesMejoresCriticas}
+                linkRuta="top_rated"
             />
             <CategoriaSeries 
-                title="Películas a estrenarse"
+                title="Series al aire"
                 series={listaSeriesAlAire}
+                linkRuta="on_the_air"
             />
-        </div>
+        </section>
     )
 } 
 
