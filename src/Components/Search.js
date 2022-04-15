@@ -21,7 +21,7 @@ const Search = (searchResultado) => {
         setSearchResultados(data.results);
       })
     );
-  }, []);
+  }, [params.title]);
 
   const handleMouseEnter = (e) => {
     e.target.style.transform = "scale(1.1)";

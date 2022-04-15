@@ -25,9 +25,9 @@ const Carousel = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        { !!SwiperSlide && data.map( curr => {
-          <SwiperSlide key={curr.id}>
-            <img src={`https://image.tmdb.org/t/p/original/${curr.backdrop_path}`} />
+        { /* !!SwiperSlide && */ data.map( curr => {
+          <SwiperSlide>
+            <img src={`https://image.tmdb.org/t/p/original/${curr.backdrop_path}`} key={curr.id} />
           </SwiperSlide>
           }
           )
