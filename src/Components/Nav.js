@@ -25,7 +25,7 @@ const Nav = () => {
     }
 
     return (
-        <nav>
+        <nav className='nav-bar'>
             <Link className='nav-link' to="/"><HomeIcon /></Link>
             <Link className='nav-link' to="/movie"><MovieIcon /></Link>
             <Link className='nav-link' to="/tv"><SerieIcon /></Link>

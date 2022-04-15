@@ -1,4 +1,4 @@
-<h1 align="center"> 🎬 Proyecto: Peliculas React</h1>
+<h1 align="center"> 🎬 Proyecto: Películas React</h1>
 
 &nbsp;
 
@@ -12,7 +12,7 @@
 
 &nbsp;
 
-<p>El proyecto Peliculas React, es el último proyecto que realicé para el bootcamp ADA ITW</p>
+<p>El proyecto Películas React, es el último proyecto que realicé para el bootcamp ADA ITW</p>
 <p>Donde después de un largo camino y mucho esfuerzo, pude adquirir muchos conocimientos como desarrolladora Frontend</p>
 
 <p>Utilizamos React trayendo información de la API The Movie Database (TMDB), junto con el uso de varias librerías </p>
@@ -32,7 +32,7 @@
 
 
 ``` 
-                                                           📌 Contenido
+                                                      📌 Contenido
 ```
   
   
@@ -72,7 +72,7 @@
 
 
 
-<p align="">🎥 Link al proyecto: <a href="mikayalandino-peliculas-react.netlify.app/" target="_blank">Peliculas React</a></p>
+<p align="">🎥 Link al proyecto: <a href="https://mikayalandino-peliculas-react.netlify.app/" target="_blank">Películas React</a></p>
 
 
 
@@ -83,7 +83,7 @@
 
 
 ``` 
-                                                               🐱‍🏍 ✔️
+                                                      🐱‍🏍 ✔️
 ```
  
 &nbsp;
