@@ -19,7 +19,7 @@ const Carousel = () => {
         arrows={true}
         slidesToShow={1}
         autoplay={true}
-        autoplaySpeed={1000}>
+        autoplaySpeed={3000}>
         {carouselMovies.map( carousel => (
           <div>
             <img
@@ -32,7 +32,7 @@ const Carousel = () => {
                 <h2 className="title-movie">{carousel.title}</h2>
                 <p className="movie-txt">{carousel.overview}</p>
                 <Link to={`/movie/${carousel.id}`}>
-                  <button>Ver más...</button>
+                  <button className="button">Ver más...</button>
                 </Link>
               </div>
             </div>
