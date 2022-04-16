@@ -11,7 +11,7 @@ const useFetch = (category, subcategory, page) => {
         .then( data => {
             setInfo(data.results)
         })
-    }, [category, subcategory, page ])
+    }, [])
 
     return info
 }

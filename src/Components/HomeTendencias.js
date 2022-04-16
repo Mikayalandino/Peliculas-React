@@ -21,7 +21,7 @@ const HomeTendencias = ({ title, types, linkRuta }) => {
             setListaTendencias(info.splice(0,5));
         })
         );
-    }, [types]);
+    }, []);
 
     return (
         <div>
