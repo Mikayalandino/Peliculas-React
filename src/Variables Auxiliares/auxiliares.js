@@ -6,4 +6,6 @@ export const urlDetalle = "https://api.themoviedb.org/3/movie/550?api_key=e25295
 
 export const urlImg300 = "https://image.tmdb.org/t/p/w300/"
 
+export const urlImgOriginal = "https://image.tmdb.org/t/p/original/"
+
 export const lenguageEs = "lenguage=es"

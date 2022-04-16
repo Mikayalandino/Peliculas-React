@@ -13,7 +13,7 @@ const CategoriaCardsSeries = ({titulo, img, link}) => {
 
     return (
         <div className="cards-tendencias">
-            <Link className="cards-link" to={link}>
+            <Link className="cards-link" to={`/tv/${link}/info`}>
                 <img 
                     src={img} 
                     alt={titulo}

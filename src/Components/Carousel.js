@@ -1,47 +1,45 @@
-/* import "../Styles/Carousel.scss";
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper';
+ import "../Styles/Carousel.scss";
+import { urlImgOriginal } from "../Variables Auxiliares/auxiliares";
 
 import useFetch from "../Hooks/useFetch";
+import { Link } from "react-router-dom";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 const Carousel = () => {
 
-  const data = useFetch("movie", "popular", 1);
+  const carouselMovies = useFetch("movie", "now_playing");
 
   return (
-    <>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        { !!SwiperSlide && data.map( (curr) => {
-          <SwiperSlide>
-            <img 
-              src={`https://image.tmdb.org/t/p/original/${curr.backdrop_path}`} 
-              alt={curr.id}
-              key={curr.id} />
-          </SwiperSlide>
-          }
-          )
-        }
-
-      </Swiper>
-    </>
+      <Slider  
+        className="slider"
+        dots={true}
+        arrows={true}
+        slidesToShow={1}
+        autoplay={true}
+        autoplaySpeed={1000}>
+        {carouselMovies.map( carousel => (
+          <div>
+            <img
+              className="img-carousel"
+              src={`${urlImgOriginal}${carousel.backdrop_path}`}
+              alt={carousel.id}
+            ></img>
+            <div className="movies-card">
+              <div className="info-movies-card">
+                <h2 className="title-movie">{carousel.title}</h2>
+                <p className="movie-txt">{carousel.overview}</p>
+                <Link to={`/movie/${carousel.id}`}>
+                  <button>Ver más...</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
   );
-}
+};
 
-Error deploy:
-  Line 28:51:  Array.prototype.map() expects a return value from arrow function  array-callback-return
-
-export default Carousel; */
+export default Carousel;
