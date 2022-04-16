@@ -50,7 +50,6 @@ const Search = (searchResultado) => {
             </div>
           ))}
         </Link>
-       
       </div>
       <Stack spacing={2}>
         <Pagination 

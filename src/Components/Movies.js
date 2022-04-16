@@ -76,7 +76,6 @@ const Movies = () => {
                 movies={listaPeliculasEnCine}
                 linkRuta="now_playing"
             />
-
         </section>
     )
 } 

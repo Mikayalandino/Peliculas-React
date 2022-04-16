@@ -4,7 +4,6 @@ import CategoriaCardsSeries from "./CategoriaCardsSeries";
 import { Link } from 'react-router-dom';
 import { FiArrowRight } from "react-icons/fi";
 
-
 const CategoriaSeries = ({title, series, linkRuta}) => {
     return (
         <div>
@@ -17,7 +16,7 @@ const CategoriaSeries = ({title, series, linkRuta}) => {
                     <CategoriaCardsSeries 
                         titulo={serie.name}
                         img={`https://image.tmdb.org/t/p/w300/${serie.poster_path}`}
-                        link={`/${serie.id}`}
+                        link={`${serie.id}`}
                         key={serie.id}
                     />)
                 }
