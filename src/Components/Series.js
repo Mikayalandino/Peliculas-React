@@ -55,6 +55,7 @@ const Series = () => {
                 linkRuta="top_rated"
             />
             <CategoriaSeries 
+                categoria="tv"
                 title="Series al aire"
                 series={listaSeriesAlAire}
                 linkRuta="on_the_air"

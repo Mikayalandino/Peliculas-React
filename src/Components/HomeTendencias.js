@@ -37,6 +37,8 @@ const HomeTendencias = ({ title, types, linkRuta }) => {
                         img={`https://image.tmdb.org/t/p/w300/${lista.poster_path}`}
                         link={`/${lista.id}`}
                         key={lista.id}
+                        types={types}
+                        id={lista.id}
                     />)
                 }
             </div>
