@@ -10,4 +10,4 @@ export const urlImg300 = "https://image.tmdb.org/t/p/w300/"
 
 export const urlImgOriginal = "https://image.tmdb.org/t/p/original/"
 
-export const lenguageEs = "lenguage=es"
+export const lenguageEs = "language=es-ES"
