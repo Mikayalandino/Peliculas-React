@@ -19,8 +19,6 @@ const CategoriaMovies = ({title, movies, linkRuta}) => {
                         id={movie.id}
                         categoria="movie"
                         key={movie.id}
-                        id={movie.id}
-                        categoria="movie"
                    />
                 )}
             </div>
