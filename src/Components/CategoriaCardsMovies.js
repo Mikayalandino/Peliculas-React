@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const CategoriaCardsMovies = ({categoria, titulo, img, id}) => {
+const CategoriaCardsMovies = ({titulo, img, id, categoria}) => {
 
     const handleMouseEnter = (e) => {
         e.target.style.transform = "scale(1.1)";

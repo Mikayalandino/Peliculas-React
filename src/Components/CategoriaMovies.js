@@ -13,10 +13,11 @@ const CategoriaMovies = ({title, movies, linkRuta}) => {
             </Link>
             <div className="cards-tendencias">
                 {movies.map(movie => 
-                   <CategoriaCardsMovies 
+                   <CategoriaCardsMovies
                         titulo={movie.title}
                         img={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-                        link={`${movie.id}`}
+                        id={movie.id}
+                        categoria="movie"
                         key={movie.id}
                         id={movie.id}
                         categoria="movie"

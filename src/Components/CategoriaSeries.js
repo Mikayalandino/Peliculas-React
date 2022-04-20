@@ -16,7 +16,8 @@ const CategoriaSeries = ({title, series, linkRuta}) => {
                     <CategoriaCardsSeries 
                         titulo={serie.name}
                         img={`https://image.tmdb.org/t/p/w300/${serie.poster_path}`}
-                        link={`${serie.id}`}
+                        id={serie.id}
+                        categoria="tv"
                         key={serie.id}
                         id={serie.id}
                         categoria="tv"

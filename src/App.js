@@ -35,8 +35,8 @@ const App = () => {
         <Route path='/' element={<Home />}></Route>
         <Route path='/search/:title' element={<Search />}></Route>
         <Route path='/movie' element={<Movies />}></Route>
-        <Route path="/movie/:category/page/:page" element={<CategoriaMovies />} />                  
-        <Route path="/:categoria/:id/:info" element={<Detalle />} /> 
+        <Route path="/movie/:category/page/:page" element={<CategoriaMovies />} />   
+        <Route path="/movie/:id/:info" element={<Detalle />} /> 
         <Route path='/tv' element={<Series />}></Route>
         <Route path="/tv/:category/page/:page" element={<CategoriaSeries/>} />
         <Route path='/*' element={<Error404 />}></Route>
