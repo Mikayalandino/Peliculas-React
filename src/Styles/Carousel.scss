@@ -1,3 +1,32 @@
 .movies-card {
     text-align: center;
+    margin: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    .info-movies-card {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        border: 1px solid black;
+        /* position: absolute; */
+
+        .movie-txt {
+            padding: 15px;
+        }
+        .button {
+            color: #fff;
+            background-color: #1890ff;
+            border: #1890ff;
+            border-radius: 5px;
+            padding: 10px;
+        }
+    }
+
+}
+
+.slick-slide img {
+    height: 60hv;
+    width: 100%;
 }

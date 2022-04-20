@@ -7,16 +7,17 @@ import { FiArrowRight } from "react-icons/fi";
 const CategoriaMovies = ({title, movies, linkRuta}) => {
     return (
         <div>
-            <Link className="peliculas-tendencia" to={`/movie/${linkRuta}`}>
+            <Link className="peliculas-tendencia" to={`/movie/${linkRuta}/page/1`}>
                 <h2 className="title">{title}</h2>
                 <FiArrowRight className="FiArrowRight" />
             </Link>
             <div className="cards-tendencias">
                 {movies.map(movie => 
-                   <CategoriaCardsMovies 
+                   <CategoriaCardsMovies
                         titulo={movie.title}
                         img={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-                        link={`${movie.id}`}
+                        id={movie.id}
+                        categoria="movie"
                         key={movie.id}
                    />
                 )}

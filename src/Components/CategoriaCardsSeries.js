@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const CategoriaCardsSeries = ({titulo, img, link}) => {
+const CategoriaCardsSeries = ({titulo, img, id, categoria}) => {
 
     const handleMouseEnter = (e) => {
         e.target.style.transform = "scale(1.1)";
@@ -13,7 +13,7 @@ const CategoriaCardsSeries = ({titulo, img, link}) => {
 
     return (
         <div className="cards-tendencias">
-            <Link className="cards-link" to={`/tv/${link}/info`}>
+            <Link className="cards-link" to={`/${categoria}/${id}/info`}>
                 <img 
                     src={img} 
                     alt={titulo}

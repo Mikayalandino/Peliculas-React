@@ -21,7 +21,7 @@ const Carousel = () => {
         autoplay={true}
         autoplaySpeed={1000}>
         {carouselMovies.map( carousel => (
-          <div>
+          <div key={carousel.id}>
             <img
               className="img-carousel"
               src={`${urlImgOriginal}${carousel.backdrop_path}`}

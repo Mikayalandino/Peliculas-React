@@ -7,7 +7,7 @@ import { FiArrowRight } from "react-icons/fi";
 const CategoriaSeries = ({title, series, linkRuta}) => {
     return (
         <div>
-            <Link className="peliculas-tendencia" to={`/tv/${linkRuta}`}>
+            <Link className="peliculas-tendencia" to={`/tv/${linkRuta}/page/1`}>
                 <h2 className="title">{title}</h2>
                 <FiArrowRight className="FiArrowRight" />
             </Link>
@@ -16,7 +16,8 @@ const CategoriaSeries = ({title, series, linkRuta}) => {
                     <CategoriaCardsSeries 
                         titulo={serie.name}
                         img={`https://image.tmdb.org/t/p/w300/${serie.poster_path}`}
-                        link={`${serie.id}`}
+                        id={serie.id}
+                        categoria="tv"
                         key={serie.id}
                     />)
                 }
