@@ -15,8 +15,8 @@ const Carousel = () => {
   return (
       <Slider  
         className="slider"
-        dots={true}
         arrows={true}
+        dots={true}
         slidesToShow={1}
         autoplay={true}
         autoplaySpeed={3000}>

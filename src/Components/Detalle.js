@@ -1,9 +1,11 @@
 import "../Styles/Detalle.scss"
 
-import { urlApi, apiKey, lenguageEs, urlImgOriginal } from "../Variables Auxiliares/auxiliares";
+import { urlApi, apiKey, lenguageEs, urlImgOriginal, urlImg300 } from "../Variables Auxiliares/auxiliares";
 
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+import Rating from '@mui/material/Rating';
 
 const Detalle = () => {
 
@@ -20,7 +22,7 @@ const Detalle = () => {
 
     return (
         <article>
-            <img src={`${urlImgOriginal}${info.backdrop_path}`} />
+                <img className="detalle-img-banner" src={`${urlImgOriginal}${info.backdrop_path}`} alt={info.title ? info.title : info.name} />
             <div className="detalle-container-links">
                 <Link className="detalle-links" to={`/movie/id/info`}>INFO</Link>
                 <Link className="detalle-links" to={`/movie/id/videos`}>EPISODIOS</Link>
@@ -28,19 +30,24 @@ const Detalle = () => {
                 <Link className="detalle-links" to={`/movie/id/videos`}>VIDEOS</Link>
                 <Link className="detalle-links" to={`/movie/id/similares`}>SIMILARES</Link>
             </div>
-            {/* {params.info === "info" && 
+            {params.info === "info" && 
                 <div className="info-container">
-                    <div>
-                        <img src={`https://image.tmdb.org/t/p/original${info.poster_path}`} alt={info.title}/>
+                    <div className="info-container-img">
+                        <img className="info-img-banner" src={`${urlImg300}/${info.poster_path}`} alt={info.title ? info.title : info.name}/>
                     </div>
                     <div className="info-detalles">
-                        <h2>{info.title}</h2>
-                        <p>⭐⭐⭐⭐⭐</p>
-                        <p>Duración: {info.runtime}</p>
-                        <p>Géneros: {info.genres}</p>
-                        <p>Presupuesto: {info.budget}</p>
-                        <p>Recaudación: {info.revenue}</p>
-                        <p>Producción: {info.production_companies}</p>
+                        <div className="info-detalles-title">
+                            <h2>{info.title ? info.title : info.name}</h2>
+                        </div>
+                        {!!info.vote_average && <Rating className="rating-stars" defaultValue={
+                            info.vote_average / 2} precision={0.5} readOnly />
+                        }
+                        <p>{info.overview}</p>
+                        <p>Duración: {info.runtime} min.</p>
+                        {/* <p>Géneros: {info.genres}</p> */}
+                        <p>Presupuesto: ${info.budget}</p>
+                        <p>Recaudación: ${info.revenue}</p>
+                        {/* <p>Producción: {info.production_companies}</p> */}
                         <div>
                             <ul className="info-links">
                                 <li>IMDB</li>
@@ -53,7 +60,7 @@ const Detalle = () => {
                     </div>
                 </div>
             }
-            {params.info === "episodios" &&  
+            {/* {params.info === "episodios" &&  
                 <Link to={`/tv/id/seasons/1`}>
                     <div>
                         <label>
