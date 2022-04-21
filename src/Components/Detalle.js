@@ -1,4 +1,6 @@
 import "../Styles/Detalle.scss"
+/* import Reparto from "./Reparto" */
+import Similares from "./Similares"
 
 import { urlApi, apiKey, lenguageEs, urlImgOriginal, urlImg300 } from "../Variables Auxiliares/auxiliares";
 
@@ -24,8 +26,9 @@ const Detalle = () => {
         <article>
                 <img className="detalle-img-banner" src={`${urlImgOriginal}${info.backdrop_path}`} alt={info.title ? info.title : info.name} />
             <div className="detalle-container-links">
+                {/* cambiar a variable movie - series */}
                 <Link className="detalle-links" to={`/movie/id/info`}>INFO</Link>
-                <Link className="detalle-links" to={`/movie/id/videos`}>EPISODIOS</Link>
+                <Link className="detalle-links" to={`/movie/id/episodios`}>EPISODIOS</Link>
                 <Link className="detalle-links" to={`/movie/id/reparto`}>REPARTO</Link>
                 <Link className="detalle-links" to={`/movie/id/videos`}>VIDEOS</Link>
                 <Link className="detalle-links" to={`/movie/id/similares`}>SIMILARES</Link>
@@ -43,11 +46,18 @@ const Detalle = () => {
                             info.vote_average / 2} precision={0.5} readOnly />
                         }
                         <p>{info.overview}</p>
-                        <p>Duración: {info.runtime} min.</p>
-                        {/* <p>Géneros: {info.genres}</p> */}
+                        {/* TV */}
+
+                        <p>Temporadas: {info.runtime}</p>
+                        <p>Episodios: {info.episode_groups}</p>
+
+                        {/*  */}
+                        <p>Duración: {info.runtime ? info.runtime : info.episode_run_time } min.</p>
+                        
+                       {/*  <p>Géneros: {info.genres}</p> */}
                         <p>Presupuesto: ${info.budget}</p>
                         <p>Recaudación: ${info.revenue}</p>
-                        {/* <p>Producción: {info.production_companies}</p> */}
+                      {/*   <p>Producción: {info.known_for_department}</p> */}
                         <div>
                             <ul className="info-links">
                                 <li>IMDB</li>
@@ -60,50 +70,54 @@ const Detalle = () => {
                     </div>
                 </div>
             }
-            {/* {params.info === "episodios" &&  
-                <Link to={`/tv/id/seasons/1`}>
+
+            {/* recorrer con map */}
+
+{/*             {params.info === "episodios" &&  
+
+
+                <div>
+                    <div>Episodios</div>
+                    <label>
+                        <select>
+                            <option>Temporada 1</option>
+                            <option>Temporada 2</option>
+                            <option>Temporada 3</option>
+                            <option>Temporada 4</option>
+                        </select>
+                    </label>
+
                     <div>
-                        <label>
-                            <select>
-                                <option>1</option>
-                            </select>
-                        </label>
+                        <img  src={`https://image.tmdb.org/t/p/w300/profile_path`} alt={`Poster de ${info.name}`}/>
                         <div>
-                            <img src={`${urlImgOriginal}/profile_path`} alt={`Poster de ${info.name}`}/>
-                            <div>
-                                <h3>EP: {info.episode_number}</h3>
-                                <h2>{info.name}</h2>    
-                            </div>
-                            <p>{info.overview}</p>
+                            <p>EP: {info.episode_number}</p>
+                            <h2>{info.name}</h2>    
                         </div>
+                        <p>{info.overview}</p>
                     </div>
-                </Link>
-            }
+                </div>
+            
+            } */}
+
             {params.info === "reparto" &&  
-                <Link to={`person/id/info`}>
-                    <div>
-                        <img src={`${urlImgOriginal}/profile_path`} alt={`Poster de ${info.name}`}/>
-                        <h2>{info.name}</h2>
-                        <h3>{info.character}</h3>
-                    </div>
-                </Link>
+
+                <div>Reparto</div>
+
             }
+
             {params.info === "videos" &&  
-                <Link to={`movie/id/videos`}>
-                    Video
-                </Link>
+                <div>
+                    Videos
+                </div>
             }
+
             {params.info === "similares" &&  
                 <div>
-                    <Link to={`movie/id/similar`}>
-                        <div>
-                            Card
-                        </div>
-                    </Link>
+                    <Similares />
                </div>
-            } */}
+            }
+
         </article>
-        
     )
 } 
 

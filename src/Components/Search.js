@@ -6,19 +6,24 @@ import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box'
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
 const Search = (searchResultado) => {
   const params = useParams();
   const [searchResultados, setSearchResultados] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
+    setIsLoading(true)
     fetch(
       `${urlApi}/search/multi?${apiKey}&query=${params.title}&${lenguageEs}`
     ).then((res) =>
       res.json().then((data) => {
         setSearchResultados(data.results);
+        setIsLoading(false)
       })
     );
   }, [params.title]);
@@ -34,6 +39,9 @@ const Search = (searchResultado) => {
 
   return (
     <section>
+      {isLoading && <Box sx={{ display: 'flex' }}>
+        <CircularProgress />
+      </Box>}
       <div>
         <h1 className="title">Resultados para:</h1>
         <Link className="search-cards" to={`/search/${searchResultado}`}>

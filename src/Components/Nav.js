@@ -32,6 +32,7 @@ const Nav = () => {
             <form className='nav-link'
                 onSubmit={handleSumbitSearchNav}>
                 <input 
+                    className='nav-input'
                     type="text" 
                     placeholder='Busqueda...'
                     onChange={handleChangeInputNav}

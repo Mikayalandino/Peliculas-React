@@ -1,22 +1,25 @@
 .slider {
-
+    
     .movies-card {
+        color: #fff;
+        height: 180px;
+        background-color: rgba(0, 0, 0, 0.925);
         text-align: center;
-        margin: 10px;
-        background-color: #fff;
-        width: 100%;
         display: flex;
         justify-content: center;
+        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 50px;
         
         .info-movies-card {
             display: flex;
             flex-direction: column;
             width: 50%;
-            border: 1px solid black;
     
             .movie-txt {
                 padding: 15px;
             }
+
             .button {
                 color: #fff;
                 background-color: #1890ff;
@@ -29,9 +32,16 @@
     }
     
     .slick-slide img {
-        height: 550px;
+        height: 500px;
         width: 100%;
         object-fit: cover;
     }
+    
+    
+}
 
+@media screen and (max-width: 1000px) {
+    .slider {
+        display: none;
+    }
 }

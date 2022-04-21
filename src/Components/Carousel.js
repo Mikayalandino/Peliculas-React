@@ -13,8 +13,8 @@ const Carousel = () => {
   const carouselMovies = useFetch("movie", "now_playing");
 
   return (
+    <div className="slider">
       <Slider  
-        className="slider"
         arrows={true}
         dots={true}
         slidesToShow={1}
@@ -31,7 +31,7 @@ const Carousel = () => {
               <div className="info-movies-card">
                 <h2 className="title-movie">{carousel.title}</h2>
                 <p className="movie-txt">{carousel.overview}</p>
-                <Link to={`/movie/${carousel.id}`}>
+                <Link to={`/movie/${carousel.id}/info`}>
                   <button className="button">Ver más...</button>
                 </Link>
               </div>
@@ -39,6 +39,7 @@ const Carousel = () => {
           </div>
         ))}
       </Slider>
+    </div>
   );
 };
 
