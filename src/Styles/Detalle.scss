@@ -1,0 +1,37 @@
+article {
+    background-color: #36393F;
+    
+    .detalle-container-links {
+        display: flex;
+        justify-content: center;
+    
+        .detalle-links {
+            color: #fff;
+            text-decoration: none;
+            padding: 20px;
+            .detalle-links:active {
+                padding-bottom: 5px;
+                border-bottom: 2px solid rgb(220, 221, 222);
+            }
+        }
+        
+    }
+    
+    .info-container {
+        display: flex;
+    
+        .info-detalles {
+           border: 1px solid black;
+        }
+        
+        .info-links {
+            display: flex;
+            margin: 20px;
+        
+            li {
+                list-style: none;
+                padding: 20px;
+            }
+        }
+    }
+}
