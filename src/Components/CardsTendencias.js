@@ -21,8 +21,7 @@ const CardsTendencias = ({ tituloPeliculas, tituloSeries, img, id, types }) => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         />
-        <h2>{tituloPeliculas}</h2>
-        <h2>{tituloSeries}</h2>
+        <h2>{tituloPeliculas ? tituloPeliculas : tituloSeries}</h2>
       </Link>
     </div>
   );
