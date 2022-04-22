@@ -15,7 +15,6 @@ import Error404 from './Components/Error404';
 import Footer from './Components/Footer';
 
 import {useState} from "react";
-import Context from "./Components/Context";
 
 const App = () => {
 
@@ -28,9 +27,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Context.Provider value={context}>
         <Nav />
-      </Context.Provider>
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/search/:title' element={<Search />}></Route>

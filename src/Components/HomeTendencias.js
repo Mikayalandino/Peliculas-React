@@ -22,7 +22,7 @@ const HomeTendencias = ({ title, types, linkRuta }) => {
         );
     }, [types]);
 
-    const listaRecortada = listaTendencias.splice(0,5)
+    const listaRecortada = listaTendencias.slice(0,5)
 
     return (
         <div className="container-home">

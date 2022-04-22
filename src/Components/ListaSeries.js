@@ -1,3 +1,5 @@
+import "../Styles/HomeTendencias.scss"
+
 import useFetch from "../Hooks/useFetch";
 import CategoriaCardsSeries from "./CategoriaCardsSeries"
 
@@ -12,44 +14,47 @@ const ListaSeries = () => {
     const data = useFetch("tv", params.category, paginado)
     
     return (
-        <div>
-            {params.category === "popular" &&
-            <h2>
-                Series populares
-            </h2>
-            }
+        <section>
+            <div className="container-lista-cards">
 
-            {params.category === "top_rated" &&
-            <h2>
-                Series con mejores críticas
-            </h2>
-            }
-
-            {params.category === "on_the_air" &&
-            <h2>
-                Series al aire
-            </h2>
-            }
-
-            {params.category === "trending" &&
-                <h2>
-                    Series tendencia
+                {params.category === "popular" &&
+                <h2 className="title">
+                    Series populares
                 </h2>
-            }
-        
-            <div>            
-                {!!data && 
-                    data.map(serie => 
-                    <CategoriaCardsSeries
-                        titulo={serie.name}
-                        img={`https://image.tmdb.org/t/p/w300/${serie.poster_path}`}
-                        id={serie.id}
-                        categoria="tv"
-                        key={serie.id}
-                    />
-                )}
+                }
+
+                {params.category === "top_rated" &&
+                <h2 className="title">
+                    Series con mejores críticas
+                </h2>
+                }
+
+                {params.category === "on_the_air" &&
+                <h2 className="title">
+                    Series al aire
+                </h2>
+                }
+
+                {params.category === "trending" &&
+                    <h2 className="title">
+                        Series tendencia
+                    </h2>
+                }
+            
+                <div className="cards-tendencias">            
+                    {!!data && 
+                        data.map(serie => 
+                        <CategoriaCardsSeries
+                            titulo={serie.name}
+                            img={`https://image.tmdb.org/t/p/w300/${serie.poster_path}`}
+                            id={serie.id}
+                            categoria="tv"
+                            key={serie.id}
+                        />
+                    )}
+                </div>
             </div>
-        </div>
+        </section>
     )
 }
 
