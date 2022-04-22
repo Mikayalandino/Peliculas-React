@@ -15,8 +15,7 @@ const Movies = () => {
         `${urlApi}/movie/popular?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
         res.json().then((data) => {
-            const info = data.results
-            setListaPeliculasPopulares(info.splice(0,5));
+            setListaPeliculasPopulares(data.results);
         })
         );
     }, []);
@@ -26,8 +25,7 @@ const Movies = () => {
         `${urlApi}/movie/top_rated?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
         res.json().then((data) => {
-            const info = data.results
-            setListaPeliculasMejoresCriticas(info.splice(0,5));
+            setListaPeliculasMejoresCriticas(data.results);
         })
         );
     }, []);
@@ -37,8 +35,7 @@ const Movies = () => {
         `${urlApi}/movie/upcoming?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
         res.json().then((data) => {
-            const info = data.results
-            setListaPeliculasAEstrenar(info.splice(0,5));
+            setListaPeliculasAEstrenar(data.results);
         })
         );
     }, []);
@@ -48,32 +45,32 @@ const Movies = () => {
         `${urlApi}/movie/now_playing?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
         res.json().then((data) => {
-            const info = data.results
-            setListaPeliculasEnCine(info.splice(0,5));
+            setListaPeliculasEnCine(data.results);
         })
         );
     }, []);
+
 
     return (
         <section>
             <CategoriaMovies 
                 title="Películas populares"
-                movies={listaPeliculasPopulares}
+                movies={listaPeliculasPopulares.slice(0,5)}
                 linkRuta="popular"
             />
             <CategoriaMovies 
                 title="Películas con mejores críticas"
-                movies={listaPeliculasMejoresCriticas}
+                movies={listaPeliculasMejoresCriticas.slice(0,5)}
                 linkRuta="top_rated"
             />
             <CategoriaMovies 
                 title="Películas a estrenarse"
-                movies={listaPeliculasAEstrenar}
+                movies={listaPeliculasAEstrenar.slice(0,5)}
                 linkRuta="upcoming"
             />
             <CategoriaMovies 
                 title="Películas en cines"
-                movies={listaPeliculasEnCine}
+                movies={listaPeliculasEnCine.slice(0,5)}
                 linkRuta="now_playing"
             />
         </section>

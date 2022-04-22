@@ -24,14 +24,15 @@ const Detalle = () => {
 
     return (
         <article>
-                <img className="detalle-img-banner" src={`${urlImgOriginal}${info.backdrop_path}`} alt={info.title ? info.title : info.name} />
+            <img className="detalle-img-banner" src={`${urlImgOriginal}${info.backdrop_path}`} alt={info.title ? info.title : info.name} />
             <div className="detalle-container-links">
-                {/* cambiar a variable movie - series */}
-                <Link className="detalle-links" to={`/movie/id/info`}>INFO</Link>
-                <Link className="detalle-links" to={`/movie/id/episodios`}>EPISODIOS</Link>
-                <Link className="detalle-links" to={`/movie/id/reparto`}>REPARTO</Link>
-                <Link className="detalle-links" to={`/movie/id/videos`}>VIDEOS</Link>
-                <Link className="detalle-links" to={`/movie/id/similares`}>SIMILARES</Link>
+                <Link className="detalle-links" to={`/${params.tipo}/${params.id}/info`}>INFO</Link>
+                {params.tipo === "movie" ?
+                    <Link className="detalle-links" to={`/${params.tipo}/${params.id}/videos`}>VIDEOS</Link> :
+                    <Link className="detalle-links" to={`/${params.tipo}/${params.id}/episodios`}>EPISODIOS</Link>
+                }
+                <Link className="detalle-links" to={`/${params.tipo}/${params.id}/reparto`}>REPARTO</Link>
+                <Link className="detalle-links" to={`/${params.tipo}/${params.id}/similares`}>SIMILARES</Link>
             </div>
             {params.info === "info" && 
                 <div className="info-container">
@@ -52,12 +53,17 @@ const Detalle = () => {
                         <p>Episodios: {info.episode_groups}</p>
 
                         {/*  */}
-                        <p>Duración: {info.runtime ? info.runtime : info.episode_run_time } min.</p>
+
+                        {!!info.duracion &&
+                            <p>Duración: {info.runtime ? info.runtime : info.episode_run_time } min.</p>}
                         
                        {/*  <p>Géneros: {info.genres}</p> */}
                         <p>Presupuesto: ${info.budget}</p>
                         <p>Recaudación: ${info.revenue}</p>
-                      {/*   <p>Producción: {info.known_for_department}</p> */}
+                        {!!info.producción && 
+                            <p>Producción: {info.known_for_department}</p>
+                        }
+                       
                         <div>
                             <ul className="info-links">
                                 <li>IMDB</li>
@@ -72,10 +78,14 @@ const Detalle = () => {
             }
 
             {/* recorrer con map */}
+            
+            {params.info === "video" &&
+                <div>Videos</div>
+            
+            }
 
-{/*             {params.info === "episodios" &&  
-
-
+            {params.info === "episodios" &&
+            
                 <div>
                     <div>Episodios</div>
                     <label>
@@ -96,19 +106,13 @@ const Detalle = () => {
                         <p>{info.overview}</p>
                     </div>
                 </div>
-            
-            } */}
+            }
+
 
             {params.info === "reparto" &&  
 
                 <div>Reparto</div>
 
-            }
-
-            {params.info === "videos" &&  
-                <div>
-                    Videos
-                </div>
             }
 
             {params.info === "similares" &&  

@@ -1,32 +1,36 @@
 import "../Styles/Search.scss";
+import "../Styles/Paginado.scss"
 
 import { urlApi, apiKey, lenguageEs } from "../Variables Auxiliares/auxiliares";
-import { Link } from 'react-router-dom';
 
+import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box'
 import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 
 const Search = (searchResultado) => {
   const params = useParams();
   const [searchResultados, setSearchResultados] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
+  const [dataPaginado, setDataPaginado] = useState({})
 
   useEffect(() => {
     setIsLoading(true)
     fetch(
-      `${urlApi}/search/multi?${apiKey}&query=${params.title}&${lenguageEs}`
+      `${urlApi}/search/multi?${apiKey}&query=${params.title}&${lenguageEs}/${page}`
     ).then((res) =>
       res.json().then((data) => {
         setSearchResultados(data.results);
         setIsLoading(false)
+        setDataPaginado(data)
       })
     );
   }, [params.title]);
+
+  console.log(dataPaginado)
 
   const handleMouseEnter = (e) => {
     e.target.style.transform = "scale(1.1)";
@@ -37,6 +41,12 @@ const Search = (searchResultado) => {
     e.target.style.transform = "scale(1)";
   };
 
+  const [page, setPage] = useState(1);
+
+  const handleChange = (e, value) => {
+    setPage(e.target.value);
+  };
+  
   return (
     <section>
       {isLoading && <Box sx={{ display: 'flex' }}>
@@ -46,27 +56,30 @@ const Search = (searchResultado) => {
         <h1 className="title">Resultados para:</h1>
         <Link className="search-cards" to={`/search/${searchResultado}`}>
           {searchResultados.map((resultado) => (
-            <div>
+            <div key={resultado.id}>
               <img
                 src={`https://image.tmdb.org/t/p/w300/${resultado.poster_path}`}
                 alt={resultado.poster_path}
-                key={resultado.id}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 />
-              <h3 key={resultado.id}>{resultado.title}</h3>
+              <h3>{resultado.title}</h3>
             </div>
           ))}
         </Link>
       </div>
-      <Stack spacing={2}>
+      <div spacing={2}>
         <Pagination 
           className="paginado"
-          count={10} 
+          page={page} 
+          count={5} 
           showFirstButton 
           showLastButton 
+          onChange={handleChange} 
+          color="info"
+          defaultPage={page}
         />
-      </Stack>
+      </div>
     </section>
   );
 };

@@ -17,20 +17,21 @@ const HomeTendencias = ({ title, types, linkRuta }) => {
         `${urlApi}/trending/${types}/week?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
         res.json().then((data) => {        
-            const info = data.results
-            setListaTendencias(info.splice(0,5));
+            setListaTendencias(data.results);
         })
         );
     }, [types]);
 
+    const listaRecortada = listaTendencias.splice(0,5)
+
     return (
         <div className="container-home">
-            <Link className="peliculas-tendencia" to={`/${types}/${linkRuta}`}>
+            <Link className="peliculas-tendencia" to={`/${types}/${linkRuta}/page/1`}>
                 <h2 className="title">{title}</h2>
                 <FiArrowRight className="FiArrowRight" />
             </Link>
             <div className="cards-tendencias">
-                {listaTendencias.map (lista => 
+                {listaRecortada.map (lista => 
                     <CardsTendencias 
                         tituloPeliculas={lista.title}
                         tituloSeries={lista.name}
