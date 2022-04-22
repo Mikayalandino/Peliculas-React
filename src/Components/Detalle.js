@@ -1,6 +1,9 @@
 import "../Styles/Detalle.scss"
-/* import Reparto from "./Reparto" */
+import Episodios from "./Episodios";
+import Videos from "./Videos";
+import Reparto from "./Reparto"
 import Similares from "./Similares"
+import BrokenImg from "../Images/BrokenImg.png"
 
 import { urlApi, apiKey, lenguageEs, urlImgOriginal, urlImg300 } from "../Variables Auxiliares/auxiliares";
 
@@ -8,6 +11,7 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import Rating from '@mui/material/Rating';
+import { display } from "@mui/system";
 
 const Detalle = () => {
 
@@ -24,7 +28,13 @@ const Detalle = () => {
 
     return (
         <article>
-            <img className="detalle-img-banner" src={`${urlImgOriginal}${info.backdrop_path}`} alt={info.title ? info.title : info.name} />
+            {info.backdrop_path ? <img className="detalle-img-banner" src={`${urlImgOriginal}${info.backdrop_path}`} alt={info.title ? info.title : info.name} />
+            :
+            <div className="container-broken-img">
+                <img className="broken-img detalle-broken-img" src={BrokenImg} alt="Imagen rota"/>
+            </div>
+            }
+
             <div className="detalle-container-links">
                 <Link className="detalle-links" to={`/${params.tipo}/${params.id}/info`}>INFO</Link>
                 {params.tipo === "movie" ?
@@ -34,10 +44,15 @@ const Detalle = () => {
                 <Link className="detalle-links" to={`/${params.tipo}/${params.id}/reparto`}>REPARTO</Link>
                 <Link className="detalle-links" to={`/${params.tipo}/${params.id}/similares`}>SIMILARES</Link>
             </div>
+
             {params.info === "info" && 
                 <div className="info-container">
                     <div className="info-container-img">
-                        <img className="info-img-banner" src={`${urlImg300}/${info.poster_path}`} alt={info.title ? info.title : info.name}/>
+                        {info.poster_path ? <img className="info-img-banner" src={`${urlImg300}/${info.poster_path}`} alt={info.title ? info.title : info.name}/>
+                        :
+                        <img className="broken-img" src={BrokenImg}  alt="Imagen rota"/>
+
+                        }
                     </div>
                     <div className="info-detalles">
                         <div className="info-detalles-title">
@@ -49,10 +64,12 @@ const Detalle = () => {
                         <p>{info.overview}</p>
                         {/* TV */}
 
-                        <p>Temporadas: {info.runtime}</p>
-                        <p>Episodios: {info.episode_groups}</p>
-
-                        {/*  */}
+                        {!!info.temporadas && 
+                            <p>Temporadas: {info.runtime}</p>
+                        }
+                        {!!info.episodios && 
+                            <p>Episodios: {info.episode_groups}</p>
+                        }
 
                         {!!info.duracion &&
                             <p>Duración: {info.runtime ? info.runtime : info.episode_run_time } min.</p>}
@@ -71,6 +88,8 @@ const Detalle = () => {
                                 <li>Facebook</li>
                                 <li>Instagram</li>
                                 <li>Link</li>
+
+                                {/* https://api.themoviedb.org/3/movie/414906/external_ids?api_key=6a93319b2d78795675b8bd9aa0965a95&language=en-US */}
                             </ul>
                         </div>
                     </div>
@@ -80,45 +99,23 @@ const Detalle = () => {
             {/* recorrer con map */}
             
             {params.info === "video" &&
-                <div>Videos</div>
+                <Videos />
             
             }
 
             {params.info === "episodios" &&
-            
-                <div>
-                    <div>Episodios</div>
-                    <label>
-                        <select>
-                            <option>Temporada 1</option>
-                            <option>Temporada 2</option>
-                            <option>Temporada 3</option>
-                            <option>Temporada 4</option>
-                        </select>
-                    </label>
-
-                    <div>
-                        <img  src={`https://image.tmdb.org/t/p/w300/profile_path`} alt={`Poster de ${info.name}`}/>
-                        <div>
-                            <p>EP: {info.episode_number}</p>
-                            <h2>{info.name}</h2>    
-                        </div>
-                        <p>{info.overview}</p>
-                    </div>
-                </div>
+                <Episodios 
+                    id={params.id}
+                    temporadas={info.seasons}
+                />
             }
 
-
-            {params.info === "reparto" &&  
-
-                <div>Reparto</div>
-
+            {params.info === "reparto" &&
+                <Reparto />
             }
 
             {params.info === "similares" &&  
-                <div>
-                    <Similares />
-               </div>
+                <Similares />
             }
 
         </article>
