@@ -1,3 +1,5 @@
+import "../Styles/Paginado.scss"
+
 import Pagination from '@mui/material/Pagination';
 
 import { useState, useEffect } from "react";
@@ -11,7 +13,7 @@ const Paginacion = () => {
   };
 
   return (
-    <div>
+    <div className="container-paginado">
       <div spacing={2}>
         <Pagination
           className="paginado"

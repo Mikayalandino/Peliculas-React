@@ -2,6 +2,7 @@ import "../Styles/HomeTendencias.scss"
 
 import CategoriaCardsMovies from "./CategoriaCardsMovies";
 import useFetch from "../Hooks/useFetch";
+import Paginacion from "./Paginacion";
 
 import { useParams } from "react-router-dom";
 import { useState } from "react";
@@ -53,8 +54,11 @@ const ListaMovies = () => {
                         )
                     }
                 </div>
-
             </div>
+
+            <Paginacion 
+            />
+            
         </section>
     )
 }

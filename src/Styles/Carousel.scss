@@ -9,7 +9,7 @@
         justify-content: center;
         margin: 0;
         padding-top: 20px;
-        padding-bottom: 50px;
+        padding-bottom: 40px;
         
         .info-movies-card {
             display: flex;
@@ -33,11 +33,10 @@
     }
     
     .slick-slide img {
-        height: 500px;
+        height: 600px;
         width: 100%;
         object-fit: cover;
     }
-    
     
 }
 

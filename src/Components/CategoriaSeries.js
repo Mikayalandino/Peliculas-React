@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { FiArrowRight } from "react-icons/fi";
 
 const CategoriaSeries = ({title, series, linkRuta}) => {
-    console.log(series)
     return (
         <div>
             <Link className="peliculas-tendencia" to={`/tv/${linkRuta}/page/1`}>

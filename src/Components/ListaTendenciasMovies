@@ -1,0 +1,40 @@
+import "../Styles/HomeTendencias.scss"
+
+import useFetch from "../Hooks/useFetch";
+
+const ListaTendenciasMovies = () => {
+
+    /* const data = useFetch( params.category, "movie", "week", paginado)
+ */
+    
+/*     useEffect( () => {
+        fetch(`${urlApi}/trending/movie/week?${apiKey}&${lenguageEs}&page=${page}`)
+        .then( res => res.json())
+        .then( data => {
+            setInfo(data.results)
+        })
+    }, []) */
+
+    return (
+        <section>
+             <div className="container-lista-cards">
+                {/* <div className="cards-tendencias">
+                    {!!data && 
+                        data.map(movie => 
+                            <CategoriaCardsMovies
+                                titulo={movie.title}
+                                img={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                                id={movie.id}
+                                categoria="movie"
+                                key={movie.id}
+                            />                  
+                        )
+                    }
+                </div> */}
+
+             </div>
+        </section>
+    )
+}
+
+export default ListaTendenciasMovies;

@@ -2,6 +2,7 @@ import "../Styles/HomeTendencias.scss"
 
 import useFetch from "../Hooks/useFetch";
 import CategoriaCardsSeries from "./CategoriaCardsSeries"
+import Paginacion from "./Paginacion";
 
 import { useParams } from "react-router-dom";
 import { useState } from "react";
@@ -37,8 +38,9 @@ const ListaSeries = () => {
 
                 {params.category === "trending" &&
                     <h2 className="title">
-                        Series tendencia
+                        Series que son tendencia
                     </h2>
+                    
                 }
             
                 <div className="cards-tendencias">            
@@ -54,6 +56,10 @@ const ListaSeries = () => {
                     )}
                 </div>
             </div>
+            
+            <Paginacion 
+            />
+            
         </section>
     )
 }

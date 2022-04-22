@@ -12,11 +12,11 @@
 
 &nbsp;
 
-<p>El proyecto Películas React, es el último proyecto que realicé para el bootcamp ADA ITW</p>
+<p>💜 El proyecto Películas React, es el último proyecto que realicé para el bootcamp ADA ITW</p>
 <p>Donde después de un largo camino y mucho esfuerzo, pude adquirir muchos conocimientos como desarrolladora Frontend</p>
 
 <p>Utilizamos React trayendo información de la API The Movie Database (TMDB), junto con el uso de varias librerías </p>
-<p>Disfruté cada momento de éste viaje tan lindo como es la programación y voy a seguir aprendiendo!</p>
+<p>🚀 Disfruté cada momento de éste viaje tan lindo como es la programación y voy a seguir aprendiendo!</p>
 
 
 &nbsp;
