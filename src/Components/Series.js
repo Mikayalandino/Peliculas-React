@@ -14,8 +14,7 @@ const Series = () => {
         `${urlApi}/tv/popular?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
         res.json().then((data) => {
-            const info = data.results
-            setListaSeriesPopulares(info.splice(0,5));
+            setListaSeriesPopulares(data.results);
         })
         );
     }, []);
@@ -25,8 +24,7 @@ const Series = () => {
         `${urlApi}/tv/top_rated?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
         res.json().then((data) => {
-            const info = data.results
-            setListaSeriesMejoresCriticas(info.splice(0,5));
+            setListaSeriesMejoresCriticas(data.results);
         })
         );
     }, []);
@@ -35,9 +33,8 @@ const Series = () => {
         fetch(
         `${urlApi}/tv/on_the_air?${apiKey}&${lenguageEs}&page=1`
         ).then((res) =>
-        res.json().then((data) => {
-            const info = data.results
-            setListaSeriesAlAire(info.splice(0,5));
+        res.json().then((data) => { 
+            setListaSeriesAlAire(data.results);
         })
         );
     }, []);
@@ -46,18 +43,18 @@ const Series = () => {
         <section>
             <CategoriaSeries 
                 title="Series populares"
-                series={listaSeriesPopulares}
+                series={listaSeriesPopulares.slice(0,5)}
                 linkRuta="popular"
             />
             <CategoriaSeries 
                 title="Series con mejores críticas"
-                series={listaSeriesMejoresCriticas}
+                series={listaSeriesMejoresCriticas.slice(0,5)}
                 linkRuta="top_rated"
             />
             <CategoriaSeries 
                 categoria="tv"
                 title="Series al aire"
-                series={listaSeriesAlAire}
+                series={listaSeriesAlAire.slice(0,5)}
                 linkRuta="on_the_air"
             />
         </section>

@@ -9,6 +9,17 @@ article {
         object-fit: cover;
     }
     
+    .container-broken-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .detalle-broken-img {
+            margin: 25px;
+            border-radius: 5px;
+        
+        }
+    }
+
     .detalle-container-links {
         display: flex;
         justify-content: center;
