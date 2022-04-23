@@ -1,11 +1,10 @@
-import "../Styles/Paginado.scss"
+import "../Styles/Paginado.scss";
 
-import Pagination from '@mui/material/Pagination';
+import Pagination from "@mui/material/Pagination";
 
 import { useState, useEffect } from "react";
 
 const Paginacion = () => {
-
   const [page, setPage] = useState(1);
 
   const handleChange = (e, value) => {
@@ -17,7 +16,7 @@ const Paginacion = () => {
       <div spacing={2}>
         <Pagination
           className="paginado"
-       /*    page={page} */
+          /*    page={page} */
           count={5}
           showFirstButton
           showLastButton

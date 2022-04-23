@@ -1,4 +1,4 @@
- import "../Styles/Carousel.scss";
+import "../Styles/Carousel.scss";
 import { urlImgOriginal } from "../Variables Auxiliares/auxiliares";
 
 import useFetch from "../Hooks/useFetch";
@@ -9,18 +9,18 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 const Carousel = () => {
-
   const carouselMovies = useFetch(false, "movie", "now_playing", 1);
 
   return (
     <div className="slider">
-      <Slider  
+      <Slider
         arrows={true}
         dots={true}
         slidesToShow={1}
         autoplay={true}
-        autoplaySpeed={3000}>
-        {carouselMovies.map( carousel => (
+        autoplaySpeed={3000}
+      >
+        {carouselMovies.map((carousel) => (
           <div key={carousel.id}>
             <img
               className="img-carousel"

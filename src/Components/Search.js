@@ -42,12 +42,14 @@ const Search = () => {
 
   return (
     <div className="container-home">
-      {isLoading && (
-        <Box sx={{ display: "flex" }}>
-          <CircularProgress />
-        </Box>
-      )}
       <div className="container-home-card">
+        <div className="loading">
+          {isLoading && (
+            <Box sx={{ display: "flex" }}>
+              <CircularProgress />
+            </Box>
+          )}
+        </div>
         <div className="peliculas-tendencia">
           <h1 className="title">Resultados para:</h1>
         </div>
@@ -55,25 +57,25 @@ const Search = () => {
       <div className="cards-tendencias">
         {searchResultados.map((resultado) => (
           <div>
-          <Link
-            to={`/${!!resultado.title ? "movie" : "tv"}/${resultado.id}/info`}
-            key={resultado.id}>
-            {resultado.poster_path ? (
-              <img
-                src={`https://image.tmdb.org/t/p/w300/${resultado.poster_path}`}
-                alt={resultado.poster_path}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              />
-            ) : (
-              <img className="broken-img" src={BrokenImg} alt="Imagen rota" />
-            )}
-             </Link>
+            <Link
+              to={`/${!!resultado.title ? "movie" : "tv"}/${resultado.id}/info`}
+              key={resultado.id}
+            >
+              {resultado.poster_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/w300/${resultado.poster_path}`}
+                  alt={resultado.poster_path}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                />
+              ) : (
+                <img className="broken-img" src={BrokenImg} alt="Imagen rota" />
+              )}
+            </Link>
             <div className="peliculas-tendencia">
               <h3 className="search-title">{resultado.title}</h3>
             </div>
-            </div>
-         
+          </div>
         ))}
       </div>
     </div>

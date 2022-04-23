@@ -1,83 +1,81 @@
 section {
-    display: flex;
-    
+  display: flex;
 }
 
 .container-home {
+  display: flex;
+  flex-direction: column;
+
+  .container-home-card {
+    color: #fff;
+    background-color: #36393f;
+  }
+
+  .loading {
     display: flex;
-    flex-direction: column;
-
-    .container-home-card {
-        color: #fff;
-        background-color: #36393F;
-    }
-
-}
-
-.peliculas-tendencia {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    margin: 20px;
-
-    .title {
-        color: gainsboro;
-        font-size: 35px;
-        font-weight: 300;
-        margin-bottom: 0;
-        text-decoration: none;
-    }
-
-    .FiArrowRight {
-        color: #2196F3;
-        font-size: 20px;
-        padding-left: 10px;
-    }
-}
-
-.cards-tendencias {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    background-color: #36393F;
-    
-    .cards-link {
-        color: gainsboro;
-        text-decoration: none;
-        padding: 10px;
+  }
 
-        h2 {
-            width: 300px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: 200;
-            margin-top: 20px;
-        }
-    }
-}
-
-h3 {
+  h3 {
     color: #fff;
     width: 300px;
     text-align: center;
     font-size: 24px;
     font-weight: 200;
-}
+  }
 
-img {
-    margin: 10px;
-  
-}
-
-.broken-img {
+  .broken-img {
     height: 450px;
     width: 300px;
     object-fit: cover;
+  }
+}
+
+.peliculas-tendencia {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 20px;
+
+  .title {
+    color: gainsboro;
+    font-size: 35px;
+    font-weight: 300;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+
+  .FiArrowRight {
+    color: #2196f3;
+    font-size: 20px;
+    padding-left: 10px;
+  }
+}
+
+.cards-tendencias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #36393f;
+
+  .cards-link {
+    color: gainsboro;
+    text-decoration: none;
+    padding: 10px;
+
+    h2 {
+      width: 300px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 200;
+      margin-top: 20px;
+    }
+  }
 }
 
 @media screen and (max-width: 576px) {
-
-   .container-home .title, .peliculas-tendencia .title {
-        font-size: 24px;
-    }
+  .container-home .title,
+  .peliculas-tendencia .title {
+    font-size: 24px;
+  }
 }

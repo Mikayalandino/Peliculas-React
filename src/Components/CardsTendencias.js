@@ -1,4 +1,4 @@
-import '../Styles/HomeTendencias.scss'
+import "../Styles/HomeTendencias.scss";
 
 import { Link } from "react-router-dom";
 

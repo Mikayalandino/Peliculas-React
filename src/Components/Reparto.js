@@ -1,30 +1,47 @@
-import { urlApi, apiKey, lenguageEs, urlImgOriginal, urlImg300 } from "../Variables Auxiliares/auxiliares";
+import {
+  urlApi,
+  apiKey,
+  lenguageEs,
+  urlImgOriginal,
+  urlImg300,
+} from "../Variables Auxiliares/auxiliares";
 import useFetch from "../Hooks/useFetch";
 
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Reparto = () => {
+const Reparto = ({ id }) => {
+  const params = useParams();
+  const [info, setInfo] = useState([]);
+  const [paginado, setPaginado] = useState(1);
 
-    const params = useParams()
-    const [info, setInfo ] = useState([])
+  useEffect(() => {
+    fetch(`${urlApi}/movie/${id}/credits?${apiKey}&${lenguageEs}&page=${paginado}`).then(
+      (res) =>
+        res.json().then((data) => {
+          setInfo(data.results);
+        })
+    );
+  }, [paginado]);
 
-   /*  const data = useFetch( params.type, params.category) */
+  console.log(info)
 
-    return (
+  return (
+    <div>
+      <h2>Reparto</h2>
+      {!!info && info.map((cast) => (
         <div>
-            <h2>Reparto</h2>
-            {/* {casting.map (cast =>
-                <Link>
-                    <img src={`${urlImgOriginal}/profile_path`} alt={`Poster de ${info.name}`}/>
-                    <h2>{info.name}</h2>
-                    <h3>{info.character}</h3>
-                </Link>
-            )
-            } */}
+          <img
+            src={`${urlImgOriginal}/profile_path`}
+            alt={`Poster de ${cast.name}`}
+          />
+          <h2>{cast.name}</h2>
+          <h3>{cast.character}</h3>
         </div>
-    )
-}
+      ))}
+    </div>
+  );
+};
 
 export default Reparto;
 

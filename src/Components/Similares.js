@@ -1,8 +1,6 @@
 const Similares = () => {
-    return(
-        <h2>Similares</h2>
-    )
-}
+  return <h2>Similares</h2>;
+};
 
 export default Similares;
 

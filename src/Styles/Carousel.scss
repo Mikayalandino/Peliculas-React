@@ -1,47 +1,44 @@
 .slider {
-    
-    .movies-card {
-        color: #fff;
-        height: 180px;
-        background-color: rgba(0, 0, 0, 0.925);
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-        padding-top: 20px;
-        padding-bottom: 40px;
-        
-        .info-movies-card {
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-    
-            .movie-txt {
-                font-weight: 100;
-                padding: 15px;
-            }
+  .movies-card {
+    color: #fff;
+    height: 180px;
+    background-color: rgba(0, 0, 0, 0.925);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 40px;
 
-            .button {
-                color: #fff;
-                background-color: #1890ff;
-                border: #1890ff;
-                border-radius: 5px;
-                padding: 10px;
-            }
-        }
-    
+    .info-movies-card {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      .movie-txt {
+        font-weight: 100;
+        padding: 15px;
+      }
+
+      .button {
+        color: #fff;
+        background-color: #1890ff;
+        border: #1890ff;
+        border-radius: 5px;
+        padding: 10px;
+      }
     }
-    
-    .slick-slide img {
-        height: 600px;
-        width: 100%;
-        object-fit: cover;
-    }
-    
+  }
+
+  .slick-slide img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 @media screen and (max-width: 1000px) {
-    .slider {
-        display: none;
-    }
+  .slider {
+    display: none;
+  }
 }

@@ -1,6 +1,13 @@
 import "../Styles/HomeTendencias.scss";
 
 import CardsTendencias from "./CardsTendencias";
+import {
+  urlApi,
+  apiKey,
+  lenguageEs,
+  urlImgOriginal,
+  urlImg300,
+} from "../Variables Auxiliares/auxiliares";
 
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -13,7 +20,7 @@ const ListaTrending = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/trending/${params.type}/week?api_key=e25295b648c3ef3c3b8c8c319786e4fb&language=es-ES&page=${paginado}`
+      `${urlApi}/trending/${params.type}/week?${apiKey}&${lenguageEs}&page=${paginado}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -40,7 +47,7 @@ const ListaTrending = () => {
               <CardsTendencias
                 tituloPeliculas={lista.title}
                 tituloSeries={lista.name}
-                img={`https://image.tmdb.org/t/p/w300/${lista.poster_path}`}
+                img={`${urlImg300}/${lista.poster_path}`}
                 link={`/${lista.id}`}
                 key={lista.id}
                 types={params.type}
