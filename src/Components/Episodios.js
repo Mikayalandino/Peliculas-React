@@ -30,12 +30,10 @@ const Episodios = ({ id, seasons }) => {
     <div>
       <label>
         <select onChange={handleChange}>
-          
-            <option >Temporada </option>
-            
+          <option>Temporada </option>
         </select>
       </label>
-     {/*  {info.map( episodes =>
+      {/*  {info.map( episodes =>
         <div>
             <img
             src={`${urlImg300}/still_path`}

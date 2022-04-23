@@ -17,7 +17,9 @@ const ListaMovies = () => {
     <div className="container-home">
       <div className="container-home-card">
         <div className="peliculas-tendencia">
-          {params.category === "popular" && <h2 className="title">Peliculas populares</h2>}
+          {params.category === "popular" && (
+            <h2 className="title">Peliculas populares</h2>
+          )}
         </div>
         <div className="peliculas-tendencia">
           {params.category === "top_rated" && (
@@ -26,10 +28,14 @@ const ListaMovies = () => {
         </div>
 
         <div className="peliculas-tendencia">
-          {params.category === "upcoming" && <h2 className="title">Películas a estrenarse</h2>}
+          {params.category === "upcoming" && (
+            <h2 className="title">Películas a estrenarse</h2>
+          )}
         </div>
         <div className="peliculas-tendencia">
-          {params.category === "now_playing" && <h2 className="title">Películas en cines</h2>}
+          {params.category === "now_playing" && (
+            <h2 className="title">Películas en cines</h2>
+          )}
         </div>
       </div>
       <div className="cards-tendencias">
