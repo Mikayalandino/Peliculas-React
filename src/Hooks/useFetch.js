@@ -1,18 +1,23 @@
 import { useState, useEffect } from "react";
 import {  urlApi, apiKey, lenguageEs } from "../Variables Auxiliares/auxiliares";
 
-const useFetch = (category, subcategory, page) => {
+const useFetch = (url, category, subcategory, page) => {
 
     const [info, setInfo] = useState([])
+    const urlBase = `${urlApi}/${category}/${subcategory}?${apiKey}&${lenguageEs}&page=${page}`
+    const urlTrending = `${urlApi}/${category}/tv/week?${apiKey}&${lenguageEs}&page=${page}`
+    const verificarLink = ( ) => url === true ? urlTrending : urlBase
+
+    const linkVerificado = verificarLink()
 
     useEffect( () => {
-        fetch(`${urlApi}/${category}/${subcategory}?${apiKey}&${lenguageEs}&page=${page}`)
+        fetch(linkVerificado)
         .then( res => res.json())
         .then( data => {
             setInfo(data.results)
         })
     }, [])
-
+    
     return info
 }
 
