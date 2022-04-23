@@ -1,12 +1,23 @@
+section {
+    display: flex;
+    
+}
+
 .container-home {
     display: flex;
     flex-direction: column;
+
+    .container-home-card {
+        color: #fff;
+        background-color: #36393F;
+    }
 }
 
 .peliculas-tendencia {
     display: flex;
     align-items: center;
     text-decoration: none;
+    margin: 20px;
 
     .title {
         color: gainsboro;
@@ -26,6 +37,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #36393F;
     
     .cards-link {
         color: gainsboro;

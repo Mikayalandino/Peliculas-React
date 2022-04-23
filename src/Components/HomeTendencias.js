@@ -26,7 +26,7 @@ const HomeTendencias = ({ title, types, linkRuta }) => {
 
     return (
         <div className="container-home">
-            <Link className="peliculas-tendencia" to={`/${types}/${linkRuta}/page/1`}>
+            <Link className="peliculas-tendencia" to={`/trending/${types}/page/1`}>
                 <h2 className="title">{title}</h2>
                 <FiArrowRight className="FiArrowRight" />
             </Link>

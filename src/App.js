@@ -11,19 +11,11 @@ import Search from './Components/Search';
 import Detalle from './Components/Detalle';
 import ListaMovies from './Components/ListaMovies';
 import ListaSeries from './Components/ListaSeries';
+import ListaTrending from "./Components/ListaTrending";
 import Error404 from './Components/Error404';
 import Footer from './Components/Footer';
 
-import {useState} from "react";
-
 const App = () => {
-
-  const [lenguage, setLenguage] = useState("es")
-
-  const context = {
-    lenguage: lenguage,
-    setLenguage: setLenguage,
-  }
 
   return (
     <BrowserRouter>
@@ -35,7 +27,8 @@ const App = () => {
         <Route path="/movie/:category/page/:page" element={<ListaMovies />} />   
         <Route path="/:tipo/:id/:info" element={<Detalle />} /> 
         <Route path='/tv' element={<Series />}></Route>
-        <Route path="/tv/:category/page/:page" element={<ListaSeries/>} />
+        <Route path="/tv/:category/page/:page" element={<ListaSeries />} />
+        <Route path="/trending/:type/page/:page" element={<ListaTrending />} />
         <Route path='/*' element={<Error404 />}></Route>
       </Routes>
       <Footer />

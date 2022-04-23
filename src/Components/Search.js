@@ -12,12 +12,12 @@ import { useState, useEffect } from "react";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box'
 
-
 const Search = (searchResultado) => {
   const params = useParams();
   const [searchResultados, setSearchResultados] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
   const [dataPaginado, setDataPaginado] = useState({})
+
 
   useEffect(() => {
     setIsLoading(true)
@@ -48,9 +48,10 @@ const Search = (searchResultado) => {
       </Box>}
       <div>
         <h1 className="title">Resultados para:</h1>
-        <Link className="search-cards" to={`/search/${searchResultado}`}>
           {searchResultados.map((resultado) => (
-            <div key={resultado.id}>
+            <Link className="search-cards" to={`/${!!resultado.title ? "movie" : "tv"}/${resultado.id}/info`}
+            key={resultado.id}>
+            <div>
               {resultado.poster_path ? <img
                 src={`https://image.tmdb.org/t/p/w300/${resultado.poster_path}`}
                 alt={resultado.poster_path}
@@ -60,9 +61,8 @@ const Search = (searchResultado) => {
               }   
               <h3>{resultado.title}</h3>
             </div>
+            </Link>
           ))}
-          
-        </Link>
       </div>
 
       <Paginacion 

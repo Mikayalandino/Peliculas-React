@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-
 import { FiVideo as MovieIcon } from "react-icons/fi";
 import { FiTv as SerieIcon } from "react-icons/fi";
 import { FiSearch as SearchIcon } from "react-icons/fi";
@@ -35,6 +34,7 @@ const Nav = () => {
                     className='nav-input'
                     type="text" 
                     placeholder='Busqueda...'
+                    value={valorDelInput}
                     onChange={handleChangeInputNav}
                 />
                 <button className='search-icon'><SearchIcon/></button>

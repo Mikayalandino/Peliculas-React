@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick.css";
 
 const Carousel = () => {
 
-  const carouselMovies = useFetch("movie", "now_playing");
+  const carouselMovies = useFetch(false, "movie", "now_playing", 1);
 
   return (
     <div className="slider">

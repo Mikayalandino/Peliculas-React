@@ -72,7 +72,7 @@
 
 
 
-<p align="">🎥 Link al proyecto: <a href="https://mikayalandino-peliculas-react.netlify.app/" target="_blank">Películas React</a></p>
+<p align="">🎥 Link al proyecto: <a href="https://peliculas-react.vercel.app/" target="_blank">Películas React</a></p>
 
 
 
