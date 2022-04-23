@@ -11,6 +11,7 @@ section {
         color: #fff;
         background-color: #36393F;
     }
+
 }
 
 .peliculas-tendencia {
@@ -24,6 +25,7 @@ section {
         font-size: 35px;
         font-weight: 300;
         margin-bottom: 0;
+        text-decoration: none;
     }
 
     .FiArrowRight {
@@ -52,6 +54,25 @@ section {
             margin-top: 20px;
         }
     }
+}
+
+h3 {
+    color: #fff;
+    width: 300px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 200;
+}
+
+img {
+    margin: 10px;
+  
+}
+
+.broken-img {
+    height: 450px;
+    width: 300px;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 576px) {
