@@ -1,14 +1,47 @@
-const Similares = () => {
-  return <h2>Similares</h2>;
+import CardsTendencias from "./CardsTendencias";
+import {
+  urlApi,
+  apiKey,
+  lenguageEs,
+  urlImgOriginal,
+  urlImg300,
+} from "../Variables Auxiliares/auxiliares";
+
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+const Similares = ({types, type}) => {
+  const params = useParams();
+  const [data, setData] = useState();
+  const [paginado, setPaginado] = useState(1);
+
+  useEffect(() => {
+    fetch(
+      `${urlApi}/${params.tipo}/${params.id}/similar?${apiKey}&${lenguageEs}&page=${paginado}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data.results);
+      });
+  }, [paginado]);
+
+  return (
+    <div>
+      {!!data &&
+        data.map((lista) => (
+          <CardsTendencias
+            tituloPeliculas={lista.title}
+            tituloSeries={lista.name}
+            img={`${urlImg300}/${lista.poster_path}`}
+            link={`/${lista.id}`}
+            key={lista.id}
+            types={types}
+            type={type}
+            id={lista.id}
+          />
+        ))}
+    </div>
+  );
 };
 
 export default Similares;
-
-/* movies
-
-https://api.themoviedb.org/3/movie/414906/similar?api_key=6a93319b2d78795675b8bd9aa0965a95&language=en-US 
-
-tv
-
-https://api.themoviedb.org/3/tv/52814/recommendations?api_key=6a93319b2d78795675b8bd9aa0965a95&language=en-US
-*/
