@@ -1,4 +1,3 @@
-import useFetch from "../Hooks/useFetch";
 import {
   urlApi,
   apiKey,
@@ -6,38 +5,35 @@ import {
   urlImg300,
 } from "../Variables Auxiliares/auxiliares";
 
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Videos = ({ id }) => {
-  const [info, setInfo] = useState([]);
-  const arrayVideos = setInfo.results
-
- 
+  const params = useParams();
+  const [data, setData] = useState();
 
   useEffect(() => {
-    fetch(`${urlApi}/movie/${id}/videos?${apiKey}&${lenguageEs}`)
+    fetch(
+      `${urlApi}/${params.tipo}/${params.id}/videos?${apiKey}&${lenguageEs}`
+    )
       .then((res) => res.json())
       .then((data) => {
-        setInfo(data);
+        setData(data.results);
       });
   }, []);
-  
+
   return (
-    <div>
-      {!!arrayVideos && arrayVideos !== [] ?
-      info.map((videos) => (
+    <div className="videos">
+      {!!data &&
+      data.map((videos) => (
         <iframe
           src={`https://www.youtube.com/embed/${videos.key}`}
           key={videos.id}
         />
       ))
-      :
-      <h2>Video no encontrado</h2>
     }
     </div>
   );
 };
 
 export default Videos;
-
-/* watch?v= */

@@ -61,6 +61,12 @@ const Detalle = () => {
         >
           INFO
         </Link>
+        <Link
+          className="detalle-links"
+          to={`/${params.tipo}/${params.id}/reparto`}
+        >
+          REPARTO
+        </Link>
         {params.tipo === "movie" ? (
           <Link
             className="detalle-links"
@@ -76,12 +82,6 @@ const Detalle = () => {
             EPISODIOS
           </Link>
         )}
-        <Link
-          className="detalle-links"
-          to={`/${params.tipo}/${params.id}/reparto`}
-        >
-          REPARTO
-        </Link>
         <Link
           className="detalle-links"
           to={`/${params.tipo}/${params.id}/similares`}
@@ -116,11 +116,8 @@ const Detalle = () => {
               />
             )}
             <p>{info.overview}</p>
-            {/* TV */}
-
             {!!info.temporadas && <p>Temporadas: {info.runtime}</p>}
             {!!info.episodios && <p>Episodios: {info.episode_groups}</p>}
-
             {!!info.duracion && (
               <p>
                 Duración: {info.runtime ? info.runtime : info.episode_run_time}{" "}
@@ -162,26 +159,21 @@ const Detalle = () => {
                     <FaLink />
                   </a>
                 </li>
-
               </ul>
             </div>
           </div>
         </div>
       )}
 
-      {/* recorrer con map */}
-
-      {params.info === "video" && <Videos 
-      id={params.id} />}
+      {params.info === "videos" && <Videos id={params.id} />}
 
       {params.info === "episodios" && (
         <Episodios id={params.id} temporadas={info.seasons} />
       )}
 
-      {params.info === "reparto" && <Reparto/>}
+      {params.info === "reparto" && <Reparto />}
 
-      {params.info === "similares" && <Similares 
-      />}
+      {params.info === "similares" && <Similares />}
     </article>
   );
 };
