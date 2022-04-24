@@ -178,10 +178,10 @@ const Detalle = () => {
         <Episodios id={params.id} temporadas={info.seasons} />
       )}
 
-      {params.info === "reparto" && <Reparto 
-      id={params.id}/>}
+      {params.info === "reparto" && <Reparto/>}
 
-      {params.info === "similares" && <Similares />}
+      {params.info === "similares" && <Similares 
+      />}
     </article>
   );
 };

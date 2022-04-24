@@ -10,6 +10,9 @@ import { useState, useEffect } from "react";
 
 const Videos = ({ id }) => {
   const [info, setInfo] = useState([]);
+  const arrayVideos = setInfo.results
+
+ 
 
   useEffect(() => {
     fetch(`${urlApi}/movie/${id}/videos?${apiKey}&${lenguageEs}`)
@@ -18,17 +21,23 @@ const Videos = ({ id }) => {
         setInfo(data);
       });
   }, []);
-
+  
   return (
     <div>
-      {info.map((videos) => (
+      {!!arrayVideos && arrayVideos !== [] ?
+      info.map((videos) => (
         <iframe
           src={`https://www.youtube.com/embed/${videos.key}`}
           key={videos.id}
         />
-      ))}
+      ))
+      :
+      <h2>Video no encontrado</h2>
+    }
     </div>
   );
 };
 
 export default Videos;
+
+/* watch?v= */
