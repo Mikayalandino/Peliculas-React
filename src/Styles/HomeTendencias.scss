@@ -23,12 +23,12 @@ section {
     font-size: 24px;
     font-weight: 200;
   }
+}
 
-  .broken-img {
-    height: 450px;
-    width: 300px;
-    object-fit: cover;
-  }
+.broken-img {
+  height: 450px;
+  width: 300px;
+  object-fit: cover;
 }
 
 .peliculas-tendencia {
@@ -58,6 +58,15 @@ section {
   justify-content: center;
   background-color: #36393f;
 
+  .card-reparto {
+    color: #fff;
+    margin: 20px;
+
+    .character {
+      font-weight: 100;
+      width: 250px;
+    }
+  }
   .cards-link {
     color: gainsboro;
     text-decoration: none;
@@ -70,6 +79,19 @@ section {
       font-weight: 200;
       margin-top: 20px;
     }
+  }
+}
+
+.videos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  iframe {      
+    width: 800px;
+    height: 500px;
+    margin: 20px;
   }
 }
 

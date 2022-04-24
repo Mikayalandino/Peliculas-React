@@ -1,3 +1,5 @@
+import "../Styles/HomeTendencias.scss";
+
 import {
   urlApi,
   apiKey,
@@ -5,6 +7,7 @@ import {
   urlImgOriginal,
   urlImg300,
 } from "../Variables Auxiliares/auxiliares";
+import BrokenImg from "../Images/BrokenImg.png";
 
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -24,20 +27,21 @@ const Reparto = () => {
       });
   }, [paginado]);
 
-  console.log(data)
-
   return (
-    <div>
-      <h2>Reparto</h2>
+    <div className="cards-tendencias">
       {!!data &&
         data.map((cast) => (
-          <div key={cast.id}>
-            <img
-              src={`https://image.tmdb.org/t/p/w300/${cast.profile_path}`}
-              alt={`Poster de ${cast.name}`}
-            />
+          <div className="card-reparto" key={cast.id}>
+            {cast.profile_path ? (
+              <img
+                src={`https://image.tmdb.org/t/p/w300/${cast.profile_path}`}
+                alt={`Poster de ${cast.name}`}
+              />
+            ) : (
+              <img className="broken-img" src={BrokenImg} alt="Imagen rota" />
+            )}
             <h2>{cast.name}</h2>
-            <h3>{cast.character}</h3>
+            <h3 className="character">{cast.character}</h3>
           </div>
         ))}
     </div>
@@ -45,10 +49,5 @@ const Reparto = () => {
 };
 
 export default Reparto;
-
-/* movie
-
-https://api.themoviedb.org/3/movie/414906/credits?api_key=6a93319b2d78795675b8bd9aa0965a95&language=en-US
-
 
 /* to={`${person}/${id}/info` */

@@ -26,7 +26,7 @@ const Similares = ({types, type}) => {
   }, [paginado]);
 
   return (
-    <div>
+    <div className="cards-tendencias">
       {!!data &&
         data.map((lista) => (
           <CardsTendencias
