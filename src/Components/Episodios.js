@@ -1,15 +1,17 @@
-import useFetch from "../Hooks/useFetch";
+import "../Styles/Episodios.scss";
+
 import {
   urlApi,
   apiKey,
   lenguageEs,
   urlImg300,
 } from "../Variables Auxiliares/auxiliares";
+import BrokenImg from "../Images/BrokenImg.png";
 
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Episodios = ({ id, seasons }) => {
+const Episodios = ({ id, temporadas }) => {
   const params = useParams();
   const [info, setInfo] = useState([]);
   const [selectOption, setSelectOption] = useState(1);
@@ -18,7 +20,7 @@ const Episodios = ({ id, seasons }) => {
     fetch(`${urlApi}/tv/${id}/season/${selectOption}?${apiKey}&${lenguageEs}`)
       .then((res) => res.json())
       .then((data) => {
-        setInfo(data);
+        setInfo(data.episodes);
       });
   }, [selectOption]);
 
@@ -26,27 +28,45 @@ const Episodios = ({ id, seasons }) => {
     setSelectOption(e.target.value);
   };
 
+  console.log(info);
+
   return (
-    <div>
-      <label>
-        <select onChange={handleChange}>
-          <option>Temporada </option>
-        </select>
-      </label>
-      {/*  {info.map( episodes =>
-        <div>
-            <img
-            src={`${urlImg300}/still_path`}
-            alt={`Poster de ${episodes.name}`}
-            />
-            <div>
-            <p>EP:{episodes.episode_number}</p>
-            <h2>{episodes.name}</h2>
+    <div className="container-episodios">
+      <div>
+        <label>
+          <select onChange={handleChange}>
+            {!!temporadas &&
+              temporadas.map((temporada) => (
+                <option value={temporada.season_number} key={temporada.id}>
+                  Temporada {temporada.season_number}{" "}
+                </option>
+              ))}
+          </select>
+        </label>
+      </div>
+
+      <div className="episodios-cards">
+        {!!info &&
+          info.map((episodes) => (
+            <div className="episodios-container">
+              {episodes.still_path ? (
+                <img
+                  src={`${urlImg300}/${episodes.still_path}`}
+                  alt={`Poster de ${episodes.name}`}
+                />
+              ) : (
+                <img className="broken-img epidodes-img-broken" src={BrokenImg} alt="Imagen rota" />
+              )}
+              <div className="episodios-info-top">
+                <p>EP:{episodes.episode_number}</p>
+                <h3>{episodes.name}</h3>
+              </div>
+              <div className="episodios-info-bottom">
+                <p>{episodes.overview}</p>
+              </div>
             </div>
-            <p>{episodes.overview}</p>
-        </div> 
-        )
-      } */}
+          ))}
+      </div>
     </div>
   );
 };

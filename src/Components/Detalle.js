@@ -124,8 +124,11 @@ const Detalle = () => {
                 min.
               </p>
             )}
-
-            {/*  <p>Géneros: {info.genres}</p> */}
+            <div className="detalle-generos">
+              <h3>Géneros: </h3>
+              {!!info.genres &&
+                info.genres.map((generos) => <p>{generos.name}</p>)}
+            </div>
             <p>Presupuesto: ${info.budget}</p>
             <p>Recaudación: ${info.revenue}</p>
             {!!info.producción && (
@@ -135,27 +138,27 @@ const Detalle = () => {
             <div>
               <ul className="info-links">
                 <li>
-                  <a href="#">
+                  <a href="">
                     <FaImdb />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="">
                     <AiOutlineTwitter />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="">
                     <AiFillFacebook />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="">
                     <FiInstagram />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="">
                     <FaLink />
                   </a>
                 </li>

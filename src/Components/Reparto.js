@@ -49,5 +49,3 @@ const Reparto = () => {
 };
 
 export default Reparto;
-
-/* to={`${person}/${id}/info` */
