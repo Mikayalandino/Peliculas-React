@@ -55,7 +55,11 @@ const Episodios = ({ id, temporadas }) => {
                   alt={`Poster de ${episodes.name}`}
                 />
               ) : (
-                <img className="broken-img epidodes-img-broken" src={BrokenImg} alt="Imagen rota" />
+                <img
+                  className="broken-img epidodes-img-broken"
+                  src={BrokenImg}
+                  alt="Imagen rota"
+                />
               )}
               <div className="episodios-info-top">
                 <p>EP:{episodes.episode_number}</p>
