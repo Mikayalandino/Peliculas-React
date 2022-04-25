@@ -25,13 +25,12 @@ const Videos = ({ id }) => {
   return (
     <div className="videos">
       {!!data &&
-      data.map((videos) => (
-        <iframe
-          src={`https://www.youtube.com/embed/${videos.key}`}
-          key={videos.id}
-        />
-      ))
-    }
+        data.map((videos) => (
+          <iframe
+            src={`https://www.youtube.com/embed/${videos.key}`}
+            key={videos.id}
+          />
+        ))}
     </div>
   );
 };

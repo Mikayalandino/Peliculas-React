@@ -10,7 +10,7 @@ import {
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Similares = ({types, type}) => {
+const Similares = ({ types, type }) => {
   const params = useParams();
   const [data, setData] = useState();
   const [paginado, setPaginado] = useState(1);
