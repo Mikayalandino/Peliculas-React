@@ -26,6 +26,7 @@ const ListaTrending = () => {
       .then((data) => {
         setData(data.results);
       });
+      // params.type deberia estar en el array de dependencias
   }, [paginado]);
 
   return (

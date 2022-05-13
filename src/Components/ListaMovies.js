@@ -39,6 +39,7 @@ const ListaMovies = () => {
         </div>
       </div>
       <div className="cards-tendencias">
+        {/* este check va a ser siempre positivo, porque data inicia como un array vacio. */}
         {!!data &&
           data.map((movie) => (
             <CategoriaCardsMovies

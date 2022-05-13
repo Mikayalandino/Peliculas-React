@@ -10,6 +10,7 @@ const Movies = () => {
   const [listaPeliculasAEstrenar, setListaPeliculasAEstrenar] = useState([]);
   const [listaPeliculasEnCine, setListaPeliculasEnCine] = useState([]);
 
+  // podes poner todos los fetch en un solo useEffect
   useEffect(() => {
     fetch(`${urlApi}/movie/popular?${apiKey}&${lenguageEs}&page=1`).then(
       (res) =>

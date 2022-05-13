@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const CategoriaCardsSeries = ({ titulo, img, id, categoria }) => {
+  // mismo comentario aca: deberian ser parte del mismo componente con las otras cards, si no el codigo queda repetitivo
   const handleMouseEnter = (e) => {
     e.target.style.transform = "scale(1.1)";
     e.target.style.transition = "0.5s";

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const CardsTendencias = ({ tituloPeliculas, tituloSeries, img, id, types }) => {
   const handleMouseEnter = (e) => {
+    // bien resuelto!
     e.target.style.transform = "scale(1.1)";
     e.target.style.transition = "0.5s";
   };

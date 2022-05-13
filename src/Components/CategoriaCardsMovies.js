@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import CardsTendencias from "./CardsTendencias";
 
 const CategoriaCardsMovies = ({ titulo, img, id, categoria }) => {
+  // este componente es muuuuy parecido a CardsTendencias...! deberian ser iguales, y resolver las diferencias con condicionales
   const handleMouseEnter = (e) => {
     e.target.style.transform = "scale(1.1)";
     e.target.style.transition = "0.5s";

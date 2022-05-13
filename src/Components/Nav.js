@@ -24,6 +24,7 @@ const Nav = () => {
 
   return (
     <nav className="nav-bar">
+      {/* usa aria label si no hay texto en el link */}
       <Link className="nav-link" to="/">
         <HomeIcon />
       </Link>
@@ -41,6 +42,7 @@ const Nav = () => {
           value={valorDelInput}
           onChange={handleChangeInputNav}
         />
+        {/* usa aria label si no hay texto */}
         <button className="search-icon">
           <SearchIcon />
         </button>

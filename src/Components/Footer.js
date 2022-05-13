@@ -9,6 +9,7 @@ const Footer = () => {
     <footer>
       <ul>
         <li>
+          {/* recoedá agregarle aria-label a tus links, si no tienen texto */}
           <a href="https://github.com/Mikayalandino">
             <AiFillGithub />
           </a>

@@ -9,6 +9,7 @@ import {
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+// para futuros challenges, es mejor no entregar una funcionalidad si no está completa
 const Episodios = ({ id, seasons }) => {
   const params = useParams();
   const [info, setInfo] = useState([]);

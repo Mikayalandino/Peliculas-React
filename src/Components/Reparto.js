@@ -23,7 +23,7 @@ const Reparto = ({ id }) => {
         })
     );
   }, [paginado]);
-
+// no dejes console log
   console.log(info)
 
   return (
